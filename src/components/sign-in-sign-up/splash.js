@@ -1,6 +1,6 @@
 import React from 'react';
-import { BsFacebook, BsTwitter } from 'react-icons/bs';
-import { FaLinkedinIn } from 'react-icons/fa';
+import { BsTwitter } from 'react-icons/bs';
+import { FaLinkedinIn, FaFacebookF } from 'react-icons/fa';
 import { AiOutlineGooglePlus } from 'react-icons/ai';
 import logo from '../../images/cars-bnb-logo.png';
 import '../../styles/signin_signup.css';
@@ -27,7 +27,7 @@ const Splash = () => (
       </div>
       <div className=" d-flex socials justify-content-center">
         <div className="d-flex justify-content-center align-items-center icons-wrap">
-          <BsFacebook />
+          <FaFacebookF />
         </div>
         <div className="d-flex justify-content-center align-items-center icons-wrap">
           <FaLinkedinIn />
