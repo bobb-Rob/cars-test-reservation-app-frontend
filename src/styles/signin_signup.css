@@ -34,3 +34,20 @@
 .socials {
   font-size: 1.5rem;
 }
+
+.sign-btn:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.sign-in-container {
+  background-image: url(../images/login-bg-ilustration.svg);
+  background-repeat: no-repeat;
+  background-position: 100% 0px;
+  background-size: 40%;
+  height: 100vh;
+}
+
+.sign-in-form-wrap {
+  border: 1px solid red;
+}
