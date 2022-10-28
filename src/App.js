@@ -1,13 +1,12 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import Routing from './components/Routing';
 import './styles/App.css';
 
 function App() {
   return (
     <div className="App">
-      <Routes>
-        <Route path="/" element={<h1>Testing</h1>} />
-      </Routes>
+      {/* Navbar here */}
+      <Routing />
     </div>
   );
 }

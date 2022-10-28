@@ -1,3 +1,13 @@
+:root {
+  --primary-color: #97bf11;
+  --grey-shade: #e4e2e2;
+  --white: #fff;
+}
+
+#root {
+  height: 100vh;
+}
+
 .fetch-button {
   font-size: 2rem;
   background-color: blue;
