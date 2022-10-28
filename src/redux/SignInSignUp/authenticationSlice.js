@@ -53,7 +53,6 @@ const authenticationSlice = createSlice({
   reducers: {},
   extraReducers: {
     [signUpUser.fulfilled]: (state, action) => {
-      console.log(action.payload);
       const newState = {
         ...state,
         user: action.payload,

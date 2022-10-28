@@ -13,8 +13,6 @@ const SignUpForm = () => {
     password: '',
   });
 
-  console.log(user);
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     const user1 = {
@@ -24,16 +22,8 @@ const SignUpForm = () => {
     setUser(user1);
   };
 
-  // const handleChange = (event) => {
-  //   const { name, value } = event.target;
-  //   const user1 = { ...user, [name]: value };
-  //   dispatch(setUser(user1));
-  //   console.log(user1);
-  // };
-
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log(user);
     dispatch(signUpUser(user)).then((response) => {
       const { code } = response.payload.status;
       if (code === 200) {

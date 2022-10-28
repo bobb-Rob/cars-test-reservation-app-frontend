@@ -12,8 +12,6 @@ const SignInForm = () => {
     password: '',
   });
 
-  console.log(user);
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     const user1 = {
@@ -26,7 +24,6 @@ const SignInForm = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     dispatch(signInUser(user)).then((response) => {
-      console.log(response);
       const { code } = response.payload;
       if (code === 200) {
         setUser({
