@@ -2,7 +2,7 @@
   height: 420px;
 }
 
-.logo>Img {
+.logo > img {
   width: 60%;
 }
 
@@ -43,7 +43,7 @@
 .sign-in-container {
   background-image: url(../images/login-bg-ilustration.svg);
   background-repeat: no-repeat;
-  background-position: 100% 0px;
+  background-position: 100% 0;
   background-size: 40%;
   height: 100vh;
 }
