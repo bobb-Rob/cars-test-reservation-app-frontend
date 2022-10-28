@@ -7,4 +7,6 @@ const setJwtToken = (response, tokenType) => {
   }
 };
 
+export const getLoginToken = () => localStorage.getItem('loginToken');
+
 export default setJwtToken;

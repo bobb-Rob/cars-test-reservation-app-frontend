@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { HiOutlineMail } from 'react-icons/hi';
 import { signInUser } from '../../redux/SignInSignUp/authenticationSlice';
 
 const SignInForm = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
-
   const [user, setUser] = useState({
     email: '',
     password: '',
@@ -27,14 +27,15 @@ const SignInForm = () => {
     e.preventDefault();
     dispatch(signInUser(user)).then((response) => {
       console.log(response);
-      // const { code } = response.payload.status;
-      // if (code === 200) {
-      //   setUser({
-      //     name: '',
-      //     email: '',
-      //     password: '',
-      //   });
-      // }
+      const { code } = response.payload;
+      if (code === 200) {
+        setUser({
+          name: '',
+          email: '',
+          password: '',
+        });
+        navigate('/cars');
+      }
     });
   };
 
