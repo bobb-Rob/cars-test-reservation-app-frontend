@@ -38,7 +38,7 @@ const SignInForm = () => {
 
   return (
     <div className="sign-in-container">
-      <div className="sign-in-form-wrap">
+      <div className="sign-in-form-wrap h-100%">
         <h2>Login</h2>
         <span>Please sign in to continue</span>
         <form onSubmit={onSubmit}>
