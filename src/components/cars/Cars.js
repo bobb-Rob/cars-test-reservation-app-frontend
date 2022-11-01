@@ -1,49 +1,34 @@
 import React, { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import CarCard from './CarCard';
 
 const Cars = () => {
   const navigate = useNavigate();
+  const cars = useSelector((state) => state.cars);
 
   useEffect(() => {
-    const token = localStorage.getItem('loginToken');
-    const url = 'http://localhost:3001/cars';
-    const options = {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: token,
-      },
-    };
-    fetch(url, options)
-      .then((response) => response.json())
-      .then((data) => console.log(data));
+    dispatch(getCars()).then((response) => {
+      console.log(response);      
+    });
   }, []);
 
-  const logout = async () => {
-    const url = 'http://localhost:3001/users/sign_out';
-    const options = {
-      method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: localStorage.getItem('loginToken'),
-      },
-    };
+    
 
-    const response = await fetch(url, options);
-    if (response.ok) {
-      localStorage.removeItem('loginToken');
-      navigate('/login');
-    } else {
-      throw new Error(response);
-    }
-    const data = await response.json();
-    return data;
-  };
 
   return (
     <div>
-      <h1>Cars</h1>
-      <button type="button" onClick={logout}>Logout</button>
+      <h1>Latest Models</h1>
+      <p>Please select a car model</p>
+      <div className="car-container">
+        { cars.map((car) => ( 
+        <CarCard key={car.id}
+          model = {car.model}
+          image = {car.image}
+          description = {car.description}
+        />)
+        )}
+      </div>      
     </div>
   );
 };
