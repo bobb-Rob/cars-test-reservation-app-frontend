@@ -25,7 +25,7 @@ const Cars = () => {
             key={car.id}
             model={car.model}
             image={car.featured_image}
-            description={car.description}
+            specifications={car.specifications}
           />
         ))}
       </div>
