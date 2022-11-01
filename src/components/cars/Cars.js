@@ -1,34 +1,34 @@
 import React, { useEffect } from 'react';
-import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+// import { useNavigate } from 'react-router-dom';
 import CarCard from './CarCard';
+import { getCars } from '../../redux/Cars/carSlice';
 
 const Cars = () => {
-  const navigate = useNavigate();
-  const cars = useSelector((state) => state.cars);
+  const carState = useSelector((state) => state.cars);
+  console.log(carState);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getCars()).then((response) => {
-      console.log(response);      
+      console.log(response);
     });
   }, []);
-
-    
-
 
   return (
     <div>
       <h1>Latest Models</h1>
       <p>Please select a car model</p>
       <div className="car-container">
-        { cars.map((car) => ( 
-        <CarCard key={car.id}
-          model = {car.model}
-          image = {car.image}
-          description = {car.description}
-        />)
-        )}
-      </div>      
+        { carState.cars.map((car) => (
+          <CarCard
+            key={car.id}
+            model={car.model}
+            image={car.featured_image}
+            description={car.description}
+          />
+        ))}
+      </div>
     </div>
   );
 };
