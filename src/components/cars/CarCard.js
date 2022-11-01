@@ -3,13 +3,13 @@ import propTypes from 'prop-types';
 import { FaFacebookF } from 'react-icons/fa';
 import { BsInstagram, BsTwitter } from 'react-icons/bs';
 
-const CarCard = ({ image, model, description }) => (
+const CarCard = ({ image, model, specifications }) => (
   <div>
     <div className="image-wrap">
       <img src={image} alt={model} />
     </div>
     <h2>{ model }</h2>
-    <p>{description}</p>
+    <p>{specifications}</p>
     <div className=" d-flex socials justify-content-center">
       <div className="d-flex justify-content-center align-items-center icons-wrap">
         <FaFacebookF />
@@ -24,10 +24,14 @@ const CarCard = ({ image, model, description }) => (
   </div>
 );
 
+CarCard.defaultProps = {
+  specifications: 'No specifications',
+};
+
 CarCard.propTypes = {
   image: propTypes.string.isRequired,
   model: propTypes.string.isRequired,
-  description: propTypes.string.isRequired,
+  specifications: propTypes.string,
 };
 
 export default CarCard;
