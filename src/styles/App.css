@@ -26,6 +26,7 @@ body {
   margin: 0;
   width: 100vw;
   height: 100vh;
+
   /* background: #ecf0f3; */
   background: linear-gradient(45deg, #fff 0%, #b6ffb3 50%, #97bf11 100%);
   display: flex;
@@ -34,16 +35,17 @@ body {
   justify-content: center;
   place-items: center;
   overflow: hidden;
-  font-family: poppins;
+  font-family: poppins, sans-serif;
 }
 
 .big {
-  width: 156%;
+  width: 164%;
   margin-left: -29%;
 }
 
 .container {
   position: relative;
+
   /* width: 350px; */
   height: 550px;
   border-radius: 20px;
@@ -112,7 +114,7 @@ input::placeholder {
   color: gray;
 }
 
-input {
+.input2 {
   background: #ecf0f3;
   padding: 10px;
   padding-left: 20px;

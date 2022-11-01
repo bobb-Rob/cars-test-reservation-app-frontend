@@ -16,16 +16,17 @@ function Addcars() {
           <div className="inputs">
             {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
             <label className="green">Model</label>
-            <input type="text" placeholder="Model" />
+            <input className="input2" type="text" placeholder="Model" />
             {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
             <label className="green">Brand</label>
-            <input type="text" placeholder="Brand" />
+            <input className="input2" type="text" placeholder="Brand" />
             {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
             <label className="green" htmlFor="date">
               date
             </label>
 
             <input
+              className="input2"
               type="date"
               id="date"
               name="trip-date"
@@ -34,7 +35,7 @@ function Addcars() {
             />
             {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
             <label className="green">car Photo</label>
-            <input type="text" placeholder="car Photo" />
+            <input className="input2" type="text" placeholder="car Photo" />
 
             <button className=" mr" type="submit">
               Add

@@ -26,6 +26,7 @@ body {
   margin: 0;
   width: 100vw;
   height: 100vh;
+
   /* background: #ecf0f3; */
   background: linear-gradient(90deg, #fff 0%, #e4e2e2 50%, #97bf11 100%);
   display: flex;
@@ -34,7 +35,7 @@ body {
   justify-content: center;
   place-items: center;
   overflow: hidden;
-  font-family: poppins;
+  font-family: poppins, sans-serif;
 }
 
 .big {
@@ -44,6 +45,7 @@ body {
 
 .container {
   position: relative;
+
   /* width: 350px; */
   height: 550px;
   border-radius: 20px;
@@ -110,16 +112,6 @@ label:nth-of-type(2) {
 
 input::placeholder {
   color: gray;
-}
-
-input {
-  background: #ecf0f3;
-  padding: 10px;
-  padding-left: 20px;
-  height: 50px;
-  font-size: 14px;
-  border-radius: 50px;
-  box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
 }
 
 button {
