@@ -27,7 +27,7 @@ body {
   width: 100vw;
   height: 100vh;
   /* background: #ecf0f3; */
-  background: linear-gradient(45deg, #fff 0%, #b6ffb3 50%, #97bf11 100%);
+  background: linear-gradient(90deg, #fff 0%, #e4e2e2 50%, #97bf11 100%);
   display: flex;
   align-items: center;
   text-align: center;
