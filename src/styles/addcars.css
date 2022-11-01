@@ -28,7 +28,7 @@ body {
   height: 100vh;
 
   /* background: #ecf0f3; */
-  background: linear-gradient(45deg, #fff 0%, #b6ffb3 50%, #97bf11 100%);
+  background: linear-gradient(90deg, #fff 0%, #e4e2e2 50%, #97bf11 100%);
   display: flex;
   align-items: center;
   text-align: center;
@@ -39,7 +39,7 @@ body {
 }
 
 .big {
-  width: 164%;
+  width: 156%;
   margin-left: -29%;
 }
 
@@ -112,16 +112,6 @@ label:nth-of-type(2) {
 
 input::placeholder {
   color: gray;
-}
-
-.input2 {
-  background: #ecf0f3;
-  padding: 10px;
-  padding-left: 20px;
-  height: 50px;
-  font-size: 14px;
-  border-radius: 50px;
-  box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
 }
 
 button {

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { BsTwitter } from 'react-icons/bs';
 import { FaLinkedinIn, FaFacebookF } from 'react-icons/fa';
 import { AiOutlineGooglePlus } from 'react-icons/ai';
@@ -13,18 +12,18 @@ const Splash = () => (
         <img src={logo} alt="Cars bnb logo" />
       </div>
       <div className="d-flex align-items-center flex-column">
-        <Link
-          to="/login"
+        <button
+          type="button"
           className="mb-5 sign-btn"
         >
-          <span>Sign In</span>
-        </Link>
-        <Link
-          to="/signup"
+          Sign In
+        </button>
+        <button
+          type="button"
           className="mb-3 sign-btn"
         >
-          <span>Create Account</span>
-        </Link>
+          Create Account
+        </button>
       </div>
       <div className=" d-flex socials justify-content-center">
         <div className="d-flex justify-content-center align-items-center icons-wrap">

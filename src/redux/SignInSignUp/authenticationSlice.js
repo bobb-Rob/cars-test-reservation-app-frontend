@@ -5,7 +5,7 @@ export const signUpUser = createAsyncThunk(
   'authentication/signUpUser',
   async (user, { rejectWithValue }) => {
     try {
-      const response = await fetch('http://localhost:3001/users', {
+      const response = await fetch('http://localhost:3000/users', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -25,7 +25,7 @@ export const signInUser = createAsyncThunk(
   'authentication/signInUser',
   async (user, { rejectWithValue }) => {
     try {
-      const response = await fetch('http://localhost:3001/users/sign_in', {
+      const response = await fetch('http://localhost:3000/users/sign_in', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
