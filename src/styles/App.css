@@ -36,10 +36,15 @@ body {
   font-family: poppins;
 }
 
+.big {
+  width: 156%;
+  margin-left: -29%;
+}
+
 .container {
   position: relative;
-  width: 350px;
-  height: 500px;
+  /* width: 350px; */
+  height: 550px;
   border-radius: 20px;
   padding: 40px;
   box-sizing: border-box;
@@ -50,19 +55,26 @@ body {
 .brand-logo {
   height: 100px;
   width: 100px;
-  background-image: url(/src/components/cars/car.jpg) ;
   margin: auto;
   border-radius: 50%;
   box-sizing: border-box;
   box-shadow: 7px 7px 10px #cbced1, -7px -7px 10px white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.5rem;
 }
 
-.brand-title {
-  margin-top: 10px;
-  font-weight: 900;
-  font-size: 1.8rem;
-  color: #1DA1F2;
+.brand-logo img {
+  width: 100%;
+}
+
+.green {
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--primary-color);
   letter-spacing: 1px;
+  margin-left: 5%;
 }
 
 .inputs {
@@ -70,7 +82,9 @@ body {
   margin-top: 30px;
 }
 
-label, input, button {
+label,
+input,
+button {
   display: block;
   width: 100%;
   padding: 0;
@@ -81,6 +95,12 @@ label, input, button {
 
 label {
   margin-bottom: 4px;
+}
+
+.mr {
+  margin-top: 4%;
+  background-color: var(--primary-color);
+  border-radius: 25%;
 }
 
 label:nth-of-type(2) {
@@ -104,7 +124,7 @@ input {
 button {
   color: white;
   margin-top: 20px;
-  background: #1DA1F2;
+  background: #1da1f2;
   height: 40px;
   border-radius: 20px;
   cursor: pointer;
