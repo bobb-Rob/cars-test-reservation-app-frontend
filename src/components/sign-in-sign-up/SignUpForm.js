@@ -1,37 +1,33 @@
-import React, { useState } from 'react';
+import React from 'react';
+/* eslint-disable react/jsx-props-no-spreading */
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
 import { HiOutlineMail } from 'react-icons/hi';
-import { signUpUser } from '../../redux/SignInSignUp/authenticationSlice';
+import { signUpUser } from '../../redux/Auth/authenticationSlice';
 import BackArrow from '../utils/BackArrow';
 
 const SignUpForm = () => {
   const dispatch = useDispatch();
-  const [user, setUser] = useState({
-    name: '',
-    email: '',
-    password: '',
+  const navigate = useNavigate();
+  const {
+    register, handleSubmit, formState: { errors }, reset,
+  } = useForm({
+    defaultValues: {
+      name: '',
+      email: '',
+      password: '',
+    },
   });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    const user1 = {
-      ...user,
-      [name]: value,
-    };
-    setUser(user1);
-  };
-
-  const onSubmit = (e) => {
+  const onSubmit = (user, e) => {
     e.preventDefault();
     dispatch(signUpUser(user)).then((response) => {
+      console.log(response);
       const { code } = response.payload.status;
       if (code === 200) {
-        setUser({
-          name: '',
-          email: '',
-          password: '',
-        });
+        reset();
+        navigate('/signup/success');
       }
     });
   };
@@ -41,7 +37,7 @@ const SignUpForm = () => {
       <BackArrow />
       <div className="sign-in-form-wrap">
         <h2>Create Account</h2>
-        <form onSubmit={onSubmit}>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <div className="form-group">
             <div>
               <HiOutlineMail />
@@ -50,11 +46,10 @@ const SignUpForm = () => {
             </div>
             <input
               type="text"
-              name="name"
               id="name"
-              value={user.name}
-              onChange={handleChange}
+              {...register('name', { required: 'Name is required' })}
             />
+            <p>{ errors.name?.message }</p>
           </div>
           <div className="form-group">
             <div>
@@ -64,11 +59,10 @@ const SignUpForm = () => {
             </div>
             <input
               type="email"
-              name="email"
               id="email"
-              value={user.email}
-              onChange={handleChange}
+              {...register('email', { required: 'Email is required' })}
             />
+            <p>{ errors.email?.message }</p>
           </div>
           <div className="form-group">
             <div>
@@ -78,11 +72,15 @@ const SignUpForm = () => {
             </div>
             <input
               type="password"
-              name="password"
               id="password"
-              value={user.password}
-              onChange={handleChange}
+              {...register('password', {
+                required: 'password is required',
+                minLength: {
+                  value: 6, message: 'password must be at least 6 characters',
+                },
+              })}
             />
+            <p>{ errors.password?.message }</p>
           </div>
           <button type="submit">Sign up</button>
         </form>
