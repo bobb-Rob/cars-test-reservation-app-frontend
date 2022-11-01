@@ -28,11 +28,13 @@ const carSlice = createSlice({
   extraReducers: {
     [getCars.pending]: (state) => {
       state.status = 'loading';
-    }
+    },
     [getCars.fulfilled]: (state, action) => {
     
     },
     [getCars.rejected]: (state, action) => {
+      state.status = 'failed';
+      state.error = action.error.message;
     }
   },
 });
