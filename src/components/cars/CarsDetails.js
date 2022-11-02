@@ -7,7 +7,6 @@ const CarDetails = () => {
   const cars = useSelector((state) => state.cars.cars);
   const params = useParams();
   const currentCar = cars.find((car) => car.id === Number(params.carId)) || {};
-  console.log(currentCar);
 
   return (
     <div className="car-details-container">
