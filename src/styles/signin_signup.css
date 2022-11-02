@@ -1,0 +1,53 @@
+.logo {
+  height: 420px;
+}
+
+.logo > img {
+  width: 60%;
+}
+
+.sign-btn {
+  width: 70%;
+  height: 50px;
+  border-radius: 25px;
+  border: 2px solid var(--primary-color);
+  background-color: var(--white);
+  color: var(--primary-color);
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.icons-wrap {
+  background-color: var(--grey-shade);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 2.5rem 1rem;
+}
+
+.socials {
+  font-size: 1.5rem;
+}
+
+.sign-btn:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.sign-in-container {
+  background-image: url(../images/login-bg-ilustration.svg);
+  background-repeat: no-repeat;
+  background-position: 100% 0;
+  background-size: 40%;
+  height: 100vh;
+}
+
+.sign-in-form-wrap {
+  border: 1px solid red;
+}

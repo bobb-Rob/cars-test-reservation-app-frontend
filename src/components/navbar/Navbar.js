@@ -18,10 +18,10 @@ function Navbar() {
         />
       </div>
       <div className="nav-links">
-        <Link to="/" className="active">MODELS</Link>
-        <Link to="/">LIFESTYLE</Link>
-        <Link to="/">SHOP</Link>
-        <Link to="/">TEST DRIVE</Link>
+        <Link to="/cars" className="active">CARS</Link>
+        <Link to="/reserve">RESERVE</Link>
+        <Link to="/reservation-list">RESERVATION LIST</Link>
+        <Link to="/addcar">ADD CAR</Link>
       </div>
 
       <div className="nav-icons">
