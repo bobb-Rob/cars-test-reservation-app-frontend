@@ -8,9 +8,10 @@
   --cars-bg: #f7f7f7;
 }
 
-#root {
+.App,
+.car-layout {
   height: 100vh;
-}
+} 
 
 .fetch-button {
   font-size: 2rem;

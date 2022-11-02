@@ -1,6 +1,5 @@
 .main-car-container {
-  background-color: #f7f7f7;
-  height: 100vh;
+  background-color: #f7f7f7;  
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -70,6 +69,12 @@
   font-size: 1rem;
   border-radius: 50%;
   margin: 0 0.5rem;
+}
+
+.car-details-container {
+  display: flex;
+  width: 100%;
+  margin: 1rem 0;
 }
 
 @media screen and (min-width: 768px) {

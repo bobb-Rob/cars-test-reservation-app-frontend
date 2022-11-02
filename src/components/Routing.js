@@ -5,6 +5,8 @@ import SignInForm from './sign-in-sign-up/SignInForm';
 import SignUpForm from './sign-in-sign-up/SignUpForm';
 import SignUpSuccesPage from './sign-in-sign-up/SignUpSuccesPage';
 import CarsPage from './cars/CarsPage';
+import Cars from './cars/Cars';
+import CarsDetails from './cars/CarsDetails';
 
 const Routing = () => (
   <Routes>
@@ -12,7 +14,10 @@ const Routing = () => (
     <Route path="/login" element={<SignInForm />} />
     <Route path="/signup" element={<SignUpForm />} />
     <Route path="/signup/success" element={<SignUpSuccesPage />} />
-    <Route path="/cars" element={<CarsPage />} />
+    <Route path="/cars" element={<CarsPage />}>
+      <Route path="" element={<Cars />} />
+      <Route path=":carId" element={<CarsDetails />} />
+    </Route>
   </Routes>
 );
 

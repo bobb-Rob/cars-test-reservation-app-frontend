@@ -1,10 +1,11 @@
 import React from 'react';
-import Cars from './Cars';
+import { Outlet } from 'react-router-dom';
+import Nav from './Nav';
 
 const CarsPage = () => (
   <div className="car-layout">
-    <nav className="navbar">Sidebar</nav>
-    <Cars />
+    <Nav />
+    <Outlet />
   </div>
 );
 
