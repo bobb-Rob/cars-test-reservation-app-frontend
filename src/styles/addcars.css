@@ -7,23 +7,20 @@
   width: 100vw;
   height: 100vh;
   background: linear-gradient(90deg, #fff 0%, #e4e2e2 50%, #97bf11 100%);
-  display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  place-items: center;
-  overflow: hidden;
+
   font-family: poppins, sans-serif;
 } */
 
 .big {
-  width: 156%;
-  margin-left: -29%;
+  width: 440px;
+  margin: auto;
 }
+
+
 
 .container {
   position: relative;
-  height: 550px;
+  height: 460px;
   border-radius: 20px;
   padding: 40px;
   box-sizing: border-box;

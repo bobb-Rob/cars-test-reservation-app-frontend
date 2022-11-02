@@ -1,0 +1,25 @@
+:root {
+  --primary-color: #97bf11;
+  --grey-shade: #e4e2e2;
+  --grey-shade-2: #282828;
+  --white: #fff;
+  --cars-bg: #f7f7f7;
+}
+
+.card {
+  width: 15rem;
+  height: 20rem;
+  margin-left: 10px;
+  margin-top: 10px;
+  box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin-top: 5%;
+}
