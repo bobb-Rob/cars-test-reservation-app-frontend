@@ -1,15 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// facebook react icon
 import {
   FaFacebookF, FaTwitter, FaPinterest, FaVimeoV,
   FaGooglePlusG,
 
 } from 'react-icons/fa';
+// import './navbar.css';
 
 function Navbar() {
   return (
-    <div>
+    <div className="navbar">
       <div className="logo">
         <img
           src="https://www.freepnglogos.com/uploads/netflix-logo-0.png"

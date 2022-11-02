@@ -1,6 +1,7 @@
-import React from 'react'
-import { Route, Switch } from 'react-router-dom'
+import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 import Navbar from '../navbar/Navbar';
+import Cars from './cars/Cars';
 
 function Main() {
   return (
@@ -11,7 +12,7 @@ function Main() {
       </Switch>
     </div>
 
-  )
+  );
 }
 
-export default Main
+export default Main;

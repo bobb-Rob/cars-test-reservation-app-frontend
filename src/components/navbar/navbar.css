@@ -1,0 +1,13 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 30vw;
+  height: 100vh;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  transition: all 0.3s ease-in-out;
+  transform: translateX(-100%);
+  overflow: hidden;
+}
