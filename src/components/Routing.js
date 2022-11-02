@@ -6,6 +6,7 @@ import SignUpForm from './sign-in-sign-up/SignUpForm';
 import Cars from './cars/Cars';
 import Addcars from './cars/addcars';
 
+
 const Routing = () => (
   <Routes>
     <Route path="/" element={<Splash />} />
@@ -13,6 +14,7 @@ const Routing = () => (
     <Route path="/signup" element={<SignUpForm />} />
     <Route path="/cars" element={<Cars />} />
     <Route path="/addcars" element={<Addcars />} />
+    <Route path="*" element={<h1>404: Not Found</h1>} />
   </Routes>
 );
 
