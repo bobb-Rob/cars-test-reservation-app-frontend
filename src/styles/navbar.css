@@ -1,12 +1,51 @@
+.my-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+}
 
-@media screen and (min-width: 768px) {  
+.my-navbar .logo {
+  width: 100px;
+  padding: 0.3rem;
+  background-color: white;
+  border-radius: 15px;
+}
+
+.my-navbar .logo img {
+  width: 100%;
+}
+
+.mobile-nav {
+  display: none;
+}
+
+.hamburger {
+  border: none;
+  background-color: transparent;
+  font-size: 1.8rem;
+  display: flex;
+}
+
+@media screen and (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+
+  .desktop-nav {
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   .my-navbar {
     display: flex;
     flex-direction: column !important;
-    justify-content: space-between;
-    align-items: center;
-    width: 20vw;
-    height: 100vh;
+    justify-content: start;    
+    width: 20vw;   
     padding: 0 20px;
     background-color: var(--cars-bg);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -55,6 +94,12 @@
     color: var(--grey-shade-2);
     text-decoration: none;
     transition: all 0.3s ease-in-out;
+  }
+
+  .nav-icons {
+    display: flex;
+    justify-content: center; 
+    margin-top: 3rem;
   }
 
   .nav-icons>a {
