@@ -13,7 +13,7 @@ const Cars = () => {
       <p>Please select a car model</p>
       <div className="car-container">
         { threeCars.map((car) => (
-          <Link to={`/cars/${car.id}`} key={car.id}>
+          <Link to={`/cars/${car.id}`} key={car.id} className="car-link">
             <CarCard
               key={car.id}
               model={car.model}

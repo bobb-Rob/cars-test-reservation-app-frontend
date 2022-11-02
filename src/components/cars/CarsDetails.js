@@ -1,24 +1,31 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import BackArrow from '../utils/BackArrow';
 
 const CarDetails = () => {
   const cars = useSelector((state) => state.cars.cars);
-  console.log(cars);
   const params = useParams();
-  const currentCar = cars.find((car) => car.id === params.carId);
+  const currentCar = cars.find((car) => car.id === Number(params.carId)) || {};
   console.log(currentCar);
 
   return (
     <div className="car-details-container">
-      <div className="car-image-wrap">
-        <img src={currentCar.image} alt={currentCar.model} />
+      <BackArrow myClassName="car-details-back-btn" />
+      <div className="car-details-image-wrap">
+        <img src={currentCar.featured_image} alt={currentCar.model} />
       </div>
-      <div>
+      <div className="car-details">
         <h2>{ currentCar.model }</h2>
         <p>{ currentCar.brand }</p>
         <p>{ currentCar.specifications }</p>
         <p>{ currentCar.released_year }</p>
+        <button
+          type="button"
+          className="reserve-btn"
+        >
+          Reserve
+        </button>
       </div>
     </div>
   );

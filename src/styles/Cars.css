@@ -27,7 +27,6 @@
   margin: 0 auto;
   width: 100%;
   padding: 0  20px;
-  border: 1px solid red;
   height: 100hv;
 }
 
@@ -39,6 +38,7 @@
   height: 400px;
   margin: 10px;
   padding: 2rem 10px;
+  color: grey;
 }
 
 .car-image-wrap {
@@ -55,6 +55,7 @@
   font-size: 1rem;
   font-weight: 700;
   margin: 10px 0;
+  color: rgb(0, 0, 0);
 }
 
 .car-card > p {
@@ -71,17 +72,97 @@
   margin: 0 0.5rem;
 }
 
+.car-link {
+  text-decoration: none;  
+}
+
 .car-details-container {
+  position: relative;
+  flex-direction: column;
+  column-gap: 1rem;
   display: flex;
   width: 100%;
+  background-color: var(--cars-bg);
+}
+
+.car-details-image-wrap {
+  display: flex;  
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem 0 1rem;
+}
+
+.car-details-image-wrap > img {
+  width: 100%;  
+}
+
+.car-details {
+  font-family: 'inter', sans-serif;
+  padding: 0 1rem;
+}
+
+.car-details-back-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 1.5rem; 
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.car-details > h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;  
+}
+
+.reserve-btn {
+  background-color: var(--primary-color);
+  border-radius: 20px;
+  width: 150px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.5rem 0;
+  border: none;
   margin: 1rem 0;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 768px) {
   .car-layout {
     display: grid;
     grid-template-columns: 180px 1fr;
-  }  
+  }
+
+  .car-details-container {   
+    flex-direction: row;   
+  }
+
+  .car-details-image-wrap {
+    flex: 2 0 10%;
+    flex-direction: row;   
+    height: 100%;
+    margin: 0;
+  }
+  
+  .car-details {
+    padding: 4rem 0.5rem 2rem;
+    flex: 1;
+    margin: 4rem 0 2rem 0;
+  }
+
+  .car-details-back-btn {
+    top: 20px;
+    padding: 0 0.5rem 0.5rem;
+    width: 70px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    color: #fff;
+    background-color: var(--primary-color);
+    height: 60px;
+  }
 }
 
 .navbar {
