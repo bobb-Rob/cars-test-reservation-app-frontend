@@ -44,8 +44,8 @@
   .my-navbar {
     display: flex;
     flex-direction: column !important;
-    justify-content: start;    
-    width: 20vw;   
+    justify-content: start;
+    width: 20vw;
     padding: 0 20px;
     background-color: var(--cars-bg);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -63,7 +63,7 @@
     object-fit: contain;
   }
 
-  .my-navbar> :first-child {
+  .my-navbar > :first-child {
     margin-top: 3rem;
   }
 
@@ -98,11 +98,11 @@
 
   .nav-icons {
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     margin-top: 3rem;
   }
 
-  .nav-icons>a {
+  .nav-icons > a {
     text-decoration: none;
     color: var(--grey-shade-2);
     margin: 0 0.3rem;
