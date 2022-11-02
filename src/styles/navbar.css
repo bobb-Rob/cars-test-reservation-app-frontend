@@ -1,0 +1,65 @@
+
+@media screen and (min-width: 768px) {  
+  .my-navbar {
+    display: flex;
+    flex-direction: column !important;
+    justify-content: space-between;
+    align-items: center;
+    width: 20vw;
+    height: 100vh;
+    padding: 0 20px;
+    background-color: var(--cars-bg);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .my-navbar .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .my-navbar .logo img {
+    height: 10vh;
+    width: 10vw;
+    object-fit: contain;
+  }
+
+  .my-navbar> :first-child {
+    margin-top: 3rem;
+  }
+
+  .my-navbar .my-nav-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'inter', sans-serif;
+    margin-top: 3rem;
+  }
+
+  .my-navbar .my-nav-links .active {
+    background-color: var(--primary-color);
+    color: #fff;
+    font-weight: 600;
+  }
+
+  .my-navbar .my-nav-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 5vh;
+    margin: 1vh 0;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--grey-shade-2);
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .nav-icons>a {
+    text-decoration: none;
+    color: var(--grey-shade-2);
+    margin: 0 0.3rem;
+  }
+}

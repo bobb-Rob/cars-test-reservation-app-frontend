@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from '../../images/cars-bnb-logo.png';
-import '../../styles/addcars.css';
+// import '../../styles/addcars.css';
 
 function Addcars() {
   return (

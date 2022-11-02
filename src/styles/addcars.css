@@ -1,33 +1,11 @@
-:root {
-  --primary-color: #97bf11;
-  --grey-shade: #e4e2e2;
-  --white: #fff;
-}
-
-#root {
-  height: 100vh;
-}
-
-.fetch-button {
-  font-size: 2rem;
-  background-color: blue;
-  color: white;
-  padding: 1rem;
-  border: none;
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap');
-
-input {
+.big input {
   caret-color: red;
 }
 
-body {
+/* body {
   margin: 0;
   width: 100vw;
   height: 100vh;
-
-  /* background: #ecf0f3; */
   background: linear-gradient(90deg, #fff 0%, #e4e2e2 50%, #97bf11 100%);
   display: flex;
   align-items: center;
@@ -36,25 +14,24 @@ body {
   place-items: center;
   overflow: hidden;
   font-family: poppins, sans-serif;
-}
+} */
 
-.big {
+/* .big {
   width: 156%;
   margin-left: -29%;
-}
+} */
 
-.container {
+/* .container {
   position: relative;
-
-  /* width: 350px; */
   height: 550px;
   border-radius: 20px;
   padding: 40px;
   box-sizing: border-box;
   background: #ecf0f3;
   box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
-}
+} */
 
+/* 
 .brand-logo {
   height: 100px;
   width: 100px;
@@ -70,8 +47,8 @@ body {
 
 .brand-logo img {
   width: 100%;
-}
-
+} */
+/* 
 .green {
   font-weight: 500;
   font-size: 1rem;
@@ -83,9 +60,9 @@ body {
 .inputs {
   text-align: left;
   margin-top: 30px;
-}
+} */
 
-label,
+/* label,
 input,
 button {
   display: block;
@@ -94,9 +71,9 @@ button {
   border: none;
   outline: none;
   box-sizing: border-box;
-}
+} */
 
-label {
+/* label {
   margin-bottom: 4px;
 }
 
@@ -104,17 +81,17 @@ label {
   margin-top: 4%;
   background-color: var(--primary-color);
   border-radius: 25%;
-}
-
+} */
+/* 
 label:nth-of-type(2) {
   margin-top: 12px;
 }
 
 input::placeholder {
   color: gray;
-}
+} */
 
-button {
+/* button {
   color: white;
   margin-top: 20px;
   background: #1da1f2;
@@ -146,4 +123,4 @@ h1 {
   position: absolute;
   top: 0;
   left: 0;
-}
+} */
