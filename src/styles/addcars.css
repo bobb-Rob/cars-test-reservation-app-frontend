@@ -1,33 +1,11 @@
-:root {
-  --primary-color: #97bf11;
-  --grey-shade: #e4e2e2;
-  --white: #fff;
-}
-
-#root {
-  height: 100vh;
-}
-
-.fetch-button {
-  font-size: 2rem;
-  background-color: blue;
-  color: white;
-  padding: 1rem;
-  border: none;
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap');
-
-input {
+.big input {
   caret-color: red;
 }
 
-body {
+/* body {
   margin: 0;
   width: 100vw;
   height: 100vh;
-
-  /* background: #ecf0f3; */
   background: linear-gradient(90deg, #fff 0%, #e4e2e2 50%, #97bf11 100%);
   display: flex;
   align-items: center;
@@ -36,7 +14,7 @@ body {
   place-items: center;
   overflow: hidden;
   font-family: poppins, sans-serif;
-}
+} */
 
 .big {
   width: 156%;
@@ -45,8 +23,6 @@ body {
 
 .container {
   position: relative;
-
-  /* width: 350px; */
   height: 550px;
   border-radius: 20px;
   padding: 40px;
@@ -54,6 +30,7 @@ body {
   background: #ecf0f3;
   box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
 }
+
 
 .brand-logo {
   height: 100px;
@@ -85,9 +62,9 @@ body {
   margin-top: 30px;
 }
 
-label,
-input,
-button {
+.big label,
+.big input,
+.big button {
   display: block;
   width: 100%;
   padding: 0;
@@ -96,25 +73,25 @@ button {
   box-sizing: border-box;
 }
 
-label {
+.big label {
   margin-bottom: 4px;
 }
 
-.mr {
+.big .mr {
   margin-top: 4%;
   background-color: var(--primary-color);
   border-radius: 25%;
 }
 
-label:nth-of-type(2) {
+.big label:nth-of-type(2) {
   margin-top: 12px;
 }
 
-input::placeholder {
+.big input::placeholder {
   color: gray;
 }
 
-button {
+.big button {
   color: white;
   margin-top: 20px;
   background: #1da1f2;
@@ -126,11 +103,11 @@ button {
   transition: 0.5s;
 }
 
-button:hover {
+.big button:hover {
   box-shadow: none;
 }
 
-a {
+.big a {
   position: absolute;
   font-size: 8px;
   bottom: 4px;
@@ -142,7 +119,7 @@ a {
   padding: 2px;
 }
 
-h1 {
+.big h1 {
   position: absolute;
   top: 0;
   left: 0;

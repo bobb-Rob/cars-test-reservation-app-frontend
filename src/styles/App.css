@@ -1,24 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Alkalami&family=Inter:wght@400;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap');
+
 :root {
   --primary-color: #97bf11;
   --grey-shade: #e4e2e2;
+  --grey-shade-2: #282828;
   --white: #fff;
+  --cars-bg: #f7f7f7;
 }
 
-#root {
+.App,
+.car-layout {
   height: 100vh;
 }
 
-.fetch-button {
-  font-size: 2rem;
-  background-color: blue;
-  color: white;
-  padding: 1rem;
-  border: none;
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap');
-
-input {
+/* input {
   caret-color: red;
 }
 
@@ -26,8 +23,6 @@ body {
   margin: 0;
   width: 100vw;
   height: 100vh;
-
-  /* background: #ecf0f3; */
   background: linear-gradient(45deg, #fff 0%, #b6ffb3 50%, #97bf11 100%);
   display: flex;
   align-items: center;
@@ -45,8 +40,6 @@ body {
 
 .container {
   position: relative;
-
-  /* width: 350px; */
   height: 550px;
   border-radius: 20px;
   padding: 40px;
@@ -156,4 +149,4 @@ h1 {
   position: absolute;
   top: 0;
   left: 0;
-}
+} */

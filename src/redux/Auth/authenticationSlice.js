@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice, current } from '@reduxjs/toolkit';
 import setJwtToken from './saveJwtToken';
 
 export const signUpUser = createAsyncThunk(
@@ -53,16 +53,28 @@ const authenticationSlice = createSlice({
   reducers: {},
   extraReducers: {
     [signUpUser.fulfilled]: (state, action) => {
+      const {
+        admin, email, id, name,
+      } = action.payload.status.data;
       const newState = {
-        ...state,
-        user: action.payload,
+        ...current(state),
+        name,
+        email,
+        id,
+        admin,
       };
       return newState;
     },
     [signInUser.fulfilled]: (state, action) => {
+      const {
+        admin, email, id, name,
+      } = action.payload.user;
       const newState = {
-        ...state,
-        user: action.payload,
+        ...current(state),
+        name,
+        email,
+        id,
+        admin,
       };
       return newState;
     },
