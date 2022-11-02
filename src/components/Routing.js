@@ -4,7 +4,7 @@ import Splash from './sign-in-sign-up/splash';
 import SignInForm from './sign-in-sign-up/SignInForm';
 import SignUpForm from './sign-in-sign-up/SignUpForm';
 import SignUpSuccesPage from './sign-in-sign-up/SignUpSuccesPage';
-import CarsPage from './cars/Cars';
+import CarsPage from './cars/CarsPage';
 
 const Routing = () => (
   <Routes>

@@ -1,0 +1,84 @@
+.main-car-container {
+  background-color: #f7f7f7;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-car-container > h1,
+.main-car-container > p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    text-align: center;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.main-car-container > h1 {
+    font-weight: 700;
+}
+
+.car-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0  20px;
+  border: 1px solid red;
+  height: 100hv;
+}
+
+.car-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 350px;
+  height: 400px;
+  margin: 10px;
+  padding: 2rem 10px;
+}
+
+.car-image-wrap {
+  width: 80%;
+  height: 140px;
+  margin-bottom: 1rem;
+}
+
+.car-image-wrap>img {
+  width: 100%;
+}
+
+.car-card > h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.car-card > p {
+  text-align: center;
+  color: grey;
+}
+
+.cars-icons-wrap {
+  border: 1px solid var(--grey-shade);
+  width: 30px;
+  height: 30px;
+  font-size: 1rem;
+  border-radius: 50%;
+  margin: 0 0.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .car-layout {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+  }  
+}
+
+.navbar {
+  background-color: var(--primary-color);
+}
