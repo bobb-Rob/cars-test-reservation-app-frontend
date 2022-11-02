@@ -19,7 +19,7 @@ const Routing = () => (
       <Route path="" element={<Cars />} />
       <Route path=":carId" element={<CarsDetails />} />
     </Route>
-    <Route path="/addcars" element={<Addcars />} />
+    <Route path="/addcar" element={<Addcars />} />
     <Route path="*" element={<h1>404: Not Found</h1>} />
   </Routes>
 );

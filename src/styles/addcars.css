@@ -16,12 +16,12 @@
   font-family: poppins, sans-serif;
 } */
 
-/* .big {
+.big {
   width: 156%;
   margin-left: -29%;
-} */
+}
 
-/* .container {
+.container {
   position: relative;
   height: 550px;
   border-radius: 20px;
@@ -29,9 +29,9 @@
   box-sizing: border-box;
   background: #ecf0f3;
   box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
-} */
+}
 
-/* 
+
 .brand-logo {
   height: 100px;
   width: 100px;
@@ -47,8 +47,8 @@
 
 .brand-logo img {
   width: 100%;
-} */
-/* 
+}
+
 .green {
   font-weight: 500;
   font-size: 1rem;
@@ -60,38 +60,38 @@
 .inputs {
   text-align: left;
   margin-top: 30px;
-} */
+}
 
-/* label,
-input,
-button {
+.big label,
+.big input,
+.big button {
   display: block;
   width: 100%;
   padding: 0;
   border: none;
   outline: none;
   box-sizing: border-box;
-} */
+}
 
-/* label {
+.big label {
   margin-bottom: 4px;
 }
 
-.mr {
+.big .mr {
   margin-top: 4%;
   background-color: var(--primary-color);
   border-radius: 25%;
-} */
-/* 
-label:nth-of-type(2) {
+}
+
+.big label:nth-of-type(2) {
   margin-top: 12px;
 }
 
-input::placeholder {
+.big input::placeholder {
   color: gray;
-} */
+}
 
-/* button {
+.big button {
   color: white;
   margin-top: 20px;
   background: #1da1f2;
@@ -103,11 +103,11 @@ input::placeholder {
   transition: 0.5s;
 }
 
-button:hover {
+.big button:hover {
   box-shadow: none;
 }
 
-a {
+.big a {
   position: absolute;
   font-size: 8px;
   bottom: 4px;
@@ -119,8 +119,8 @@ a {
   padding: 2px;
 }
 
-h1 {
+.big h1 {
   position: absolute;
   top: 0;
   left: 0;
-} */
+}
