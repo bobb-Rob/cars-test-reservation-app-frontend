@@ -5,15 +5,16 @@ import {
   FaGooglePlusG,
 
 } from 'react-icons/fa';
-// import './navbar.css';
+import './navbar.css';
+import logo from '../cars/car.jpg';
 
 function Navbar() {
   return (
     <div className="navbar">
       <div className="logo">
         <img
-          src="https://www.freepnglogos.com/uploads/netflix-logo-0.png"
-          alt="Netflix Logo"
+          src={logo}
+          alt="carsBnb Logo"
         />
       </div>
       <div className="nav-links">

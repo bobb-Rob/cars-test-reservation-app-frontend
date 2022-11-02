@@ -1,15 +1,18 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
-import Navbar from '../navbar/Navbar';
+// import { Route, Routes } from 'react-router-dom';
+import Navbar from './navbar/Navbar';
 import Cars from './cars/Cars';
+import './main.css';
 
 function Main() {
   return (
-    <div>
+    <div className="main">
       <Navbar />
-      <Switch>
+
+      {/* <Routes>
         <Route exact path="/" element={<Cars />} />
-      </Switch>
+      </Routes> */}
+      <Cars />
     </div>
 
   );
