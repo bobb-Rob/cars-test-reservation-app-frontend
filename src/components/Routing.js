@@ -7,6 +7,7 @@ import SignUpSuccesPage from './sign-in-sign-up/SignUpSuccesPage';
 import CarsPage from './cars/CarsPage';
 import Cars from './cars/Cars';
 import CarsDetails from './cars/CarsDetails';
+import Addcars from './cars/addcars';
 
 const Routing = () => (
   <Routes>
@@ -17,7 +18,9 @@ const Routing = () => (
     <Route path="/cars" element={<CarsPage />}>
       <Route path="" element={<Cars />} />
       <Route path=":carId" element={<CarsDetails />} />
-    </Route>
+    </Route>  
+    <Route path="/addcars" element={<Addcars />} />    
+    <Route path="*" element={<h1>404: Not Found</h1>} />
   </Routes>
 );
 

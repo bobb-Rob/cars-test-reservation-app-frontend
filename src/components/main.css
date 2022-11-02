@@ -1,0 +1,10 @@
+.main {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}

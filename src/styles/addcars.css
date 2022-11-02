@@ -1,0 +1,149 @@
+:root {
+  --primary-color: #97bf11;
+  --grey-shade: #e4e2e2;
+  --white: #fff;
+}
+
+#root {
+  height: 100vh;
+}
+
+.fetch-button {
+  font-size: 2rem;
+  background-color: blue;
+  color: white;
+  padding: 1rem;
+  border: none;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap');
+
+input {
+  caret-color: red;
+}
+
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+
+  /* background: #ecf0f3; */
+  background: linear-gradient(90deg, #fff 0%, #e4e2e2 50%, #97bf11 100%);
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  place-items: center;
+  overflow: hidden;
+  font-family: poppins, sans-serif;
+}
+
+.big {
+  width: 156%;
+  margin-left: -29%;
+}
+
+.container {
+  position: relative;
+
+  /* width: 350px; */
+  height: 550px;
+  border-radius: 20px;
+  padding: 40px;
+  box-sizing: border-box;
+  background: #ecf0f3;
+  box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+}
+
+.brand-logo {
+  height: 100px;
+  width: 100px;
+  margin: auto;
+  border-radius: 50%;
+  box-sizing: border-box;
+  box-shadow: 7px 7px 10px #cbced1, -7px -7px 10px white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+.brand-logo img {
+  width: 100%;
+}
+
+.green {
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--primary-color);
+  letter-spacing: 1px;
+  margin-left: 5%;
+}
+
+.inputs {
+  text-align: left;
+  margin-top: 30px;
+}
+
+label,
+input,
+button {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+label {
+  margin-bottom: 4px;
+}
+
+.mr {
+  margin-top: 4%;
+  background-color: var(--primary-color);
+  border-radius: 25%;
+}
+
+label:nth-of-type(2) {
+  margin-top: 12px;
+}
+
+input::placeholder {
+  color: gray;
+}
+
+button {
+  color: white;
+  margin-top: 20px;
+  background: #1da1f2;
+  height: 40px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 900;
+  box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+  transition: 0.5s;
+}
+
+button:hover {
+  box-shadow: none;
+}
+
+a {
+  position: absolute;
+  font-size: 8px;
+  bottom: 4px;
+  right: 4px;
+  text-decoration: none;
+  color: black;
+  background: yellow;
+  border-radius: 10px;
+  padding: 2px;
+}
+
+h1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
