@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './cars.css';
 
 const Cars = () => {
   const navigate = useNavigate();
@@ -54,7 +55,7 @@ const Cars = () => {
   };
 
   return (
-    <div>
+    <div className="cars-container">
       <h1>Cars</h1>
       <button type="button" onClick={logout}>Logout</button>
     </div>
