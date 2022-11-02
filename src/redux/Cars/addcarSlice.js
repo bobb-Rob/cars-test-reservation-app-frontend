@@ -4,10 +4,12 @@ const addcars = createAsyncThunk(
   'cars/addcars',
   async (car, { rejectWithValue }) => {
     try {
+      const token = localStorage.getItem('loginToken');
       const response = await fetch('http://localhost:3001/cars', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          Authorization: token,
         },
         body: JSON.stringify({ car }),
       });
