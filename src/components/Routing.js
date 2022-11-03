@@ -22,7 +22,6 @@ const Routing = () => (
     </Route>
     <Route path="/addcar" element={<Addcars />} />
     <Route path="/reservations" element={<Reservations />} />
-
     <Route path="*" element={<h1>404: Not Found</h1>} />
   </Routes>
 );

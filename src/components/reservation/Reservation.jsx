@@ -4,24 +4,53 @@ import { Link } from 'react-router-dom';
 
 function Reservations() {
   const reservations = useSelector((state) => state.reservations.reservations);
-
-  console.log(reservations);
+  const cars = useSelector((state) => state.cars.cars);
 
   return (
-    <div>
-      <h1>My reservations</h1>
-      <ul>
-        {reservations.map((reservation) => (
-          <li key={reservation.id}>
-            <Link to={`/reservations/${reservation.id}`}>
-              {reservation.reservation_date}
-              {reservation.updated_at}
-              {reservation.city}
-              {reservation.user_id}
-            </Link>
-          </li>
-        ))}
-      </ul>
+    <div className="container">
+      <div className="row">
+        <div className="col-md-12">
+          <h1 className="text-center">Reservations</h1>
+          <div className="row">
+            {reservations.map((reservation) => (
+              <div className="col-md-4" key={reservation.id}>
+                <div className="card mb-4">
+                  <div className="card-body">
+                    <img
+                      src={
+                        cars.find((car) => car.id === reservation.car_id)
+                          .featured_image
+                      }
+                      alt="car"
+                      className="img-fluid"
+                    />
+                    {reservation.car_id ? (
+                      <h5 className="card-title">
+                        {
+                          cars.find((car) => car.id === reservation.car_id)
+                            .model
+                        }
+                      </h5>
+                    ) : (
+                      <h5 className="card-title">Car not found</h5>
+                    )}
+
+                    <p className="card-text">{reservation.city}</p>
+                    <p className="card-text">{reservation.reservation_date}</p>
+
+                    <Link
+                      to={`/delete_reservation/${reservation.id}`}
+                      className="btn btn-danger"
+                    >
+                      Remove
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
