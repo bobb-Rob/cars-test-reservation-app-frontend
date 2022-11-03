@@ -18,6 +18,7 @@ function Addcars() {
       model: '',
       year_released: '',
       featured_image: '',
+      specifications: '',
     },
   });
 
@@ -80,6 +81,14 @@ function Addcars() {
               className="input2"
               type="text"
               placeholder="car Photo"
+            />
+            {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+            <label className="green">specifications</label>
+            <textarea
+              {...register('specifications', { required: true })}
+              className="input3"
+              type="text"
+              placeholder="specifications"
             />
 
             <button className=" mr" type="submit">
