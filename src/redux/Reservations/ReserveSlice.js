@@ -24,24 +24,32 @@ const initialState = {
   reservations: [],
   status: 'idle',
   error: null,
+  addFromNav: false,
 };
 
 const reserveSlice = createSlice({
   name: 'reserve',
   initialState,
-  reducers: {},
+  reducers: {
+    addFromNav(state, action) {
+      const newState = { ...current(state) };
+      newState.addFromNav = action.payload;
+      return newState;
+    },
+  },
   extraReducers: {
     [createReserve.fulfilled]: (state, action) => {
       console.log(current(state));
       console.log(action.payload);
       const { reservations } = current(state);
-      const { data } = action.payload;
+      const { reservation } = action.payload;
       // state.reservations = [...reservations, data];
       console.log(reservations);
-      console.log(data);
+      console.log(reservation);
       console.log(action.payload);
     },
   },
 });
 
 export default reserveSlice.reducer;
+export const { addFromNav } = reserveSlice.actions;

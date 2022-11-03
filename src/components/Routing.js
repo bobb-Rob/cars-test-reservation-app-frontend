@@ -19,11 +19,9 @@ const Routing = () => (
     <Route path="/signup/success" element={<SignUpSuccesPage />} />
     <Route path="/cars" element={<CarsPage />}>
       <Route path="" element={<Cars />} />
-      <Route path=":carId" element={<CarsDetails />}>
-        <Route path="/cars/:carId/reserve" element={<Carousel />} />
-        <Route path="/cars/:carId/reservations/add" element={<AddReserveForm />} />
-      </Route>
+      <Route path=":carId" element={<CarsDetails />} />
     </Route>
+    <Route path="/cars/:carId/reservations/add" element={<AddReserveForm />} />
     <Route path="/cars/choose/reservations/add" element={<AddReserveForm />} />
     <Route path="/reserve" element={<Carousel />} />
     <Route path="/addcar" element={<Addcars />} />

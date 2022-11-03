@@ -15,6 +15,10 @@ export const fetchCars = createAsyncThunk(
         },
       };
       const response = await fetch(url, options);
+      if (response.status === 401) {
+        console.log('Unauthorized');
+        return rejectWithValue('Unauthorized');
+      }
       const data = await response.json();
       console.log(response);
       return data;
@@ -30,16 +34,8 @@ const carSlice = createSlice({
     cars: [],
     status: 'idle',
     error: null,
-    addFromNav: false,
   },
-  reducers: {
-    addFromNav(state) {
-      const newState = { ...state };
-      console.log(newState);
-      newState.addFromNav = !newState.addFromNav;
-      return newState;
-    },
-  },
+  reducers: {},
   extraReducers: {
     [fetchCars.pending]: (state) => {
       const newState = { ...current(state) };
@@ -48,18 +44,23 @@ const carSlice = createSlice({
     },
     [fetchCars.fulfilled]: (state, action) => {
       const newState = { ...current(state) };
+      const {
+        admin, email, id, name,
+      } = action.payload.user;
       newState.cars = action.payload.cars;
+      newState.user = {
+        admin, email, id, name,
+      };
       newState.status = 'succeeded';
       return newState;
     },
     [fetchCars.rejected]: (state, action) => {
       const newState = { ...current(state) };
       newState.status = 'failed';
-      newState.error = action.error.message;
+      newState.error = action.payload;
       return newState;
     },
   },
 });
 
 export default carSlice.reducer;
-export const { addFromNav } = carSlice.actions;

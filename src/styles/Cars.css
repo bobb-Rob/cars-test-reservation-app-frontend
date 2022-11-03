@@ -25,9 +25,7 @@
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  /* padding: 0  20px; */
   width: 100%;
-  border: 1px solid red;
 }
 
 .car-card {
@@ -39,7 +37,7 @@
   height: 400px;
   margin: 10px;
   padding: 2rem 10px;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 .car-image-wrap {

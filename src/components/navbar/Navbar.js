@@ -7,7 +7,7 @@ import {
 import { HiMenu } from 'react-icons/hi';
 import '../../styles/navbar.css';
 import logo from '../../images/cars-bnb-logo.png';
-import { addFromNav } from '../../redux/Cars/carSlice';
+import { addFromNav } from '../../redux/Reservations/ReserveSlice';
 
 function Navbar() {
   const dispatch = useDispatch();
@@ -26,7 +26,7 @@ function Navbar() {
             <NavLink
               to={`/cars/${carId}/reservations/add`}
               onClick={() => {
-                dispatch(addFromNav());
+                dispatch(addFromNav(true));
               }}
             >
               RESERVE
