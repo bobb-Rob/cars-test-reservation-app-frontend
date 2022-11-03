@@ -4,7 +4,7 @@ export const createReserve = createAsyncThunk(
   'reserve/createReserve',
   async (data, { rejectWithValue }) => {
     try {
-      const response = await fetch('http://localhost:3000/reservations', {
+      const response = await fetch('http://localhost:3001/reservations', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -36,14 +36,19 @@ const reserveSlice = createSlice({
       newState.addFromNav = action.payload;
       return newState;
     },
+    isError(state, action) {
+      const newState = { ...current(state) };
+      newState.error = action.payload;
+      return newState;
+    }
   },
   extraReducers: {
     [createReserve.fulfilled]: (state, action) => {
       console.log(current(state));
       console.log(action.payload);
-      const { reservations } = current(state);
+      let { reservations } = current(state);
       const { reservation } = action.payload;
-      // state.reservations = [...reservations, data];
+      reservations = [...reservations, reservation];
       console.log(reservations);
       console.log(reservation);
       console.log(action.payload);
@@ -52,4 +57,4 @@ const reserveSlice = createSlice({
 });
 
 export default reserveSlice.reducer;
-export const { addFromNav } = reserveSlice.actions;
+export const { addFromNav, isError } = reserveSlice.actions;

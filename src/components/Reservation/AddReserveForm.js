@@ -2,21 +2,24 @@
 import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useSelector, useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom';
-import { addFromNav } from '../../redux/Reservations/ReserveSlice';
+import { useParams, useNavigate } from 'react-router-dom';
+import { addFromNav, createReserve, isError } from '../../redux/Reservations/ReserveSlice';
 import '../../styles/reservation.css';
 
 const AddReserveForm = () => {
   const state = useSelector((state) => state);
+  const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [errorMessages, setErrorMessages] = React.useState([]);
+
   const { cars, reservations } = state;
   const { user } = cars;
   const params = useParams();
   const currentCar = cars.cars.find((car) => car.id === Number(params.carId)) || {};
-  const { register, handleSubmit, formState: { errors } } = useForm({
+  const { register, handleSubmit, formState: { errors }, reset } = useForm({
     defaultValues: {
       city: '',
-      date: '',
+      reservation_date: '',
       car_id: '',
       user_id: '',
     },
@@ -26,6 +29,17 @@ const AddReserveForm = () => {
     e.preventDefault();
     const reservation = { ...data, user_id: user.id };
     console.log(reservation);
+    dispatch(createReserve(reservation)).then((response) => {
+      if (response.type === 'reservations/createReserve/fulfilled') {
+        if (response.ok) {
+          reset();
+          navigate('/reservation-list');
+        } else {
+          dispatch(isError(true));
+          setErrorMessages(response.payload.error);
+        }
+      }
+    });
   };
 
   useEffect(() => {
@@ -38,6 +52,13 @@ const AddReserveForm = () => {
 
   return (
     <div className="container w-75 w-sm-50 mt-5 reserve-form-wrap">
+      { reservations.error || errorMessages.length > 0 && (
+        <div className="alert alert-danger" role="alert">
+          {errorMessages.map((error) => (
+            <p key={error}>{error}</p>
+          ))}
+        </div>
+      )}
       <h2>Create a Reservation</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         <input
@@ -49,10 +70,10 @@ const AddReserveForm = () => {
         {errors.city && <span>City is required</span>}
         <input
           type="date"
-          name="date"
+          name="reservation_date"
           className="form-control mb-3"
-          placeholder="Date"
-          {...register('date', { required: true })}
+          placeholder="reservation_date"
+          {...register('reservation_date', { required: true })}
         />
         {errors.date && <span>Date is required</span>}
         { reservations.addFromNav ? (
@@ -62,7 +83,7 @@ const AddReserveForm = () => {
             aria-label="Default select example"
             {...register('car_id', { required: true })}
           >
-            <option selected>Open to select a car</option>
+            <option defaultValue="nil">Open to select a car</option>
             {cars.cars.map((car) => (
               <option key={car.id} value={car.id}>
                 {car.model}
@@ -76,7 +97,7 @@ const AddReserveForm = () => {
             aria-label="Default select example"
             {...register('car_id', { required: true })}
           >
-            <option selected>Open to select a car</option>
+            <option defaultValue="nil">Open to select a car</option>
             <option key={currentCar.id} value={currentCar.id}>
               {currentCar.model}
             </option>
