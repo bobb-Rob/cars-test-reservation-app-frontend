@@ -14,7 +14,9 @@ import reportWebVitals from './reportWebVitals';
 const container = document.getElementById('root');
 const root = createRoot(container);
 
-store.dispatch(fetchCars());
+store.dispatch(fetchCars()).then((data) => {
+  console.log(data);
+});
 
 root.render(
   <BrowserRouter>

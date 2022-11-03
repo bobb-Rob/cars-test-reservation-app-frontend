@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
 }
 
 .main-car-container > h1,
@@ -25,19 +25,21 @@
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+  /* padding: 0  20px; */
   width: 100%;
-  padding: 0  20px;
+  border: 1px solid red;
 }
 
 .car-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 350px;
+  width: 320px;
+  color: grey;
   height: 400px;
   margin: 10px;
   padding: 2rem 10px;
-  color: grey;
+  border: 1px solid red;
 }
 
 .car-image-wrap {
@@ -162,8 +164,4 @@
     background-color: var(--primary-color);
     height: 60px;
   }
-}
-
-.navbar {
-  background-color: var(--primary-color);
 }

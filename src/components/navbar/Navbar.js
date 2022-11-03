@@ -1,13 +1,18 @@
 import React from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { NavLink, Link, useParams } from 'react-router-dom';
 import {
   FaFacebookF, FaTwitter, FaPinterest, FaVimeoV, FaGooglePlusG,
 } from 'react-icons/fa';
 import { HiMenu } from 'react-icons/hi';
 import '../../styles/navbar.css';
 import logo from '../../images/cars-bnb-logo.png';
+import { addFromNav } from '../../redux/Cars/carSlice';
 
 function Navbar() {
+  const dispatch = useDispatch();
+  const carId = useParams().carId || 'choose';
+  console.log(carId);
   return (
     <header className="my-navbar">
       <div className="logo">
@@ -18,7 +23,14 @@ function Navbar() {
           <div className="my-nav-links">
             <NavLink to="/cars" className="active">CARS</NavLink>
             <NavLink to="/addcar">ADD CAR</NavLink>
-            <NavLink to="/reserve">RESERVE</NavLink>
+            <NavLink
+              to={`/cars/${carId}/reservations/add`}
+              onClick={() => {
+                dispatch(addFromNav());
+              }}
+            >
+              RESERVE
+            </NavLink>
             <NavLink to="/reservation-list">MY RESERVATIONS</NavLink>
           </div>
           <div className="nav-footer">

@@ -8,6 +8,8 @@ import CarsPage from './cars/CarsPage';
 import Cars from './cars/Cars';
 import CarsDetails from './cars/CarsDetails';
 import Addcars from './cars/addcars';
+import Carousel from './cars/Carousel';
+import AddReserveForm from './Reservation/AddReserveForm';
 
 const Routing = () => (
   <Routes>
@@ -17,8 +19,13 @@ const Routing = () => (
     <Route path="/signup/success" element={<SignUpSuccesPage />} />
     <Route path="/cars" element={<CarsPage />}>
       <Route path="" element={<Cars />} />
-      <Route path=":carId" element={<CarsDetails />} />
+      <Route path=":carId" element={<CarsDetails />}>
+        <Route path="/cars/:carId/reserve" element={<Carousel />} />
+        <Route path="/cars/:carId/reservations/add" element={<AddReserveForm />} />
+      </Route>
     </Route>
+    <Route path="/cars/choose/reservations/add" element={<AddReserveForm />} />
+    <Route path="/reserve" element={<Carousel />} />
     <Route path="/addcar" element={<Addcars />} />
     <Route path="*" element={<h1>404: Not Found</h1>} />
   </Routes>
