@@ -1,23 +1,21 @@
 import { createSlice, createAsyncThunk, current } from '@reduxjs/toolkit';
+import addcars, { deleteCars } from './addcarSlice';
 // eslint-disable no-unused-vars
 
-export const fetchCars = createAsyncThunk(
-  'cars/fetchCars',
-  async () => {
-    const token = localStorage.getItem('loginToken');
-    const url = 'http://localhost:3001/cars';
-    const options = {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: token,
-      },
-    };
-    const response = await fetch(url, options);
-    const data = await response.json();
-    return data;
-  },
-);
+export const fetchCars = createAsyncThunk('cars/fetchCars', async () => {
+  const token = localStorage.getItem('loginToken');
+  const url = 'http://localhost:3001/cars';
+  const options = {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: token,
+    },
+  };
+  const response = await fetch(url, options);
+  const data = await response.json();
+  return data;
+});
 
 const carSlice = createSlice({
   name: 'cars',
@@ -43,6 +41,18 @@ const carSlice = createSlice({
       const newState = { ...current(state) };
       newState.status = 'failed';
       newState.error = action.error.message;
+      return newState;
+    },
+    [addcars.fulfilled]: (state, action) => {
+      const newState = { ...current(state) };
+      newState.cars.push(action.payload.car);
+      return newState;
+    },
+    [deleteCars.fulfilled]: (state, action) => {
+      const newState = { ...current(state) };
+      newState.cars = newState.cars.filter(
+        (car) => car.id !== action.payload.car.id,
+      );
       return newState;
     },
   },

@@ -17,12 +17,13 @@ function Addcars() {
       brand: '',
       model: '',
       year_released: '',
-      photo: '',
+      featured_image: '',
     },
   });
 
   const onSubmit = (car, e) => {
     e.preventDefault();
+    console.log(car);
     dispatch(addcars(car)).then((response) => {
       const { code } = response.payload;
       if (code === 200) {
@@ -75,7 +76,7 @@ function Addcars() {
             {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
             <label className="green">car Photo</label>
             <input
-              {...register('photo', { required: true })}
+              {...register('featured_image', { required: true })}
               className="input2"
               type="text"
               placeholder="car Photo"
