@@ -1,7 +1,11 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import {
-  FaFacebookF, FaTwitter, FaPinterest, FaVimeoV, FaGooglePlusG,
+  FaFacebookF,
+  FaTwitter,
+  FaPinterest,
+  FaVimeoV,
+  FaGooglePlusG,
 } from 'react-icons/fa';
 import { HiMenu } from 'react-icons/hi';
 import '../../styles/navbar.css';
@@ -16,10 +20,13 @@ function Navbar() {
       <nav className="menu">
         <div className="mobile-nav desktop-nav">
           <div className="my-nav-links">
-            <NavLink to="/cars" className="active">CARS</NavLink>
+            <NavLink to="/cars" className="active">
+              CARS
+            </NavLink>
             <NavLink to="/addcar">ADD CAR</NavLink>
             <NavLink to="/reserve">RESERVE</NavLink>
             <NavLink to="/reservation-list">MY RESERVATIONS</NavLink>
+            <NavLink to="/delete">DELETE CAR</NavLink>
           </div>
           <div className="nav-footer">
             <div className="nav-icons">
