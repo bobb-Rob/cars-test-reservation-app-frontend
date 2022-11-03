@@ -19,7 +19,7 @@ function Navbar() {
             <NavLink to="/cars" className="active">CARS</NavLink>
             <NavLink to="/addcar">ADD CAR</NavLink>
             <NavLink to="/reserve">RESERVE</NavLink>
-            <NavLink to="/reservation-list">MY RESERVATIONS</NavLink>
+            <NavLink to="/reservations">MY RESERVATIONS</NavLink>
           </div>
           <div className="nav-footer">
             <div className="nav-icons">
