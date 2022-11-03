@@ -1,14 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-function Reservation() {
-  const [reservations, setReservations] = useState([]);
+function Reservations() {
+  const reservations = useSelector((state) => state.reservations.reservations);
 
-  useEffect(() => {
-    fetch('http://localhost:5000/reservations')
-      .then((res) => res.json())
-      .then((reservations) => setReservations(reservations));
-  }, []);
+  console.log(reservations);
 
   return (
     <div>
@@ -16,8 +13,11 @@ function Reservation() {
       <ul>
         {reservations.map((reservation) => (
           <li key={reservation.id}>
-            <Link to={`/reservation/${reservation.id}`}>
-              {reservation.item.name}
+            <Link to={`/reservations/${reservation.id}`}>
+              {reservation.reservation_date}
+              {reservation.updated_at}
+              {reservation.city}
+              {reservation.user_id}
             </Link>
           </li>
         ))}
@@ -26,4 +26,4 @@ function Reservation() {
   );
 }
 
-export default Reservation;
+export default Reservations;

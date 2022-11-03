@@ -4,6 +4,7 @@ import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 import { fetchCars } from './redux/Cars/carSlice';
+import { fetchReservations } from './redux/reservationList/reservationListSlice';
 import App from './App';
 // Bootstrap CSS
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -15,6 +16,7 @@ const container = document.getElementById('root');
 const root = createRoot(container);
 
 store.dispatch(fetchCars());
+store.dispatch(fetchReservations());
 
 root.render(
   <BrowserRouter>
