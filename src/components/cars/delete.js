@@ -8,9 +8,14 @@ export default function Delete() {
 
   const carState = useSelector((state) => state.cars);
 
+  // how to get the id of the car to be deleted from the store and pass it to the deleteCars action
   const handleDelete = (id) => {
-    dispatch(deleteCars({ id }));
+    dispatch(deleteCars(id));
   };
+
+  // const handleDelete = (id) => {
+  //   dispatch(deleteCars({ id }));
+  // };
 
   const renderlist = carState.cars.map((car) => (
     <div key={car.id} className="card g-col-6">
