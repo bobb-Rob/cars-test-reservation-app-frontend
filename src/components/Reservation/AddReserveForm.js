@@ -12,7 +12,7 @@ const AddReserveForm = () => {
   const dispatch = useDispatch();
   const [errorMessages, setErrorMessages] = React.useState([]);
 
-  const { cars, addReservations } = state;
+  const { cars, reservations } = state;
   const { user } = cars;
   const params = useParams();
   const currentCar = cars.cars.find((car) => car.id === Number(params.carId)) || {};
@@ -43,18 +43,14 @@ const AddReserveForm = () => {
     });
   };
 
-  useEffect(() => {
-    console.log('mounted');
-    return () => {
-      console.log('unmounted');
-      dispatch(addFromNav(false));
-      dispatch(isError(false));
-    };
-  }, [addReservations.addFromNav]);
+  useEffect(() => () => {
+    dispatch(addFromNav(false));
+    dispatch(isError(false));
+  }, [reservations.addFromNav], dispatch);
 
   return (
     <div className="container w-75 w-sm-50 mt-5 reserve-form-wrap">
-      { (addReservations.error || (errorMessages.length > 0)) && (
+      { (reservations.error || (errorMessages.length > 0)) && (
         <div className="alert alert-danger" role="alert">
           {errorMessages.map((error) => (
             <p key={error}>{error}</p>
@@ -78,7 +74,7 @@ const AddReserveForm = () => {
           {...register('reservation_date', { required: true })}
         />
         {errors.date && <span>Date is required</span>}
-        { addReservations.addFromNav ? (
+        { reservations.addFromNav ? (
           <select
             name="car_id"
             className="form-select"

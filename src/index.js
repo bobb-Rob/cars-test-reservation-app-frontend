@@ -4,7 +4,8 @@ import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 import { fetchCars } from './redux/Cars/carSlice';
-import { fetchReservations } from './redux/reservationList/reservationListSlice';
+import { fetchReservations } from './redux/Reservations/ReserveSlice';
+
 import App from './App';
 // Bootstrap CSS
 import 'bootstrap/dist/css/bootstrap.min.css';

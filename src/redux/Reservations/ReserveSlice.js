@@ -1,5 +1,23 @@
 import { createAsyncThunk, createSlice, current } from '@reduxjs/toolkit';
 
+export const fetchReservations = createAsyncThunk(
+  'reservations/fetchReservations',
+  async () => {
+    const token = localStorage.getItem('loginToken');
+    const url = 'http://localhost:3001/reservations';
+    const options = {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: token,
+      },
+    };
+    const response = await fetch(url, options);
+    const data = await response.json();
+    return data;
+  },
+);
+
 export const createReserve = createAsyncThunk(
   'reserve/createReserve',
   async (data, { rejectWithValue }) => {
@@ -43,15 +61,27 @@ const reserveSlice = createSlice({
     },
   },
   extraReducers: {
+    [fetchReservations.pending]: (state) => {
+      const newState = { ...current(state) };
+      newState.status = 'loading';
+      return newState;
+    },
+    [fetchReservations.fulfilled]: (state, action) => {
+      const newState = { ...current(state) };
+      newState.reservations = action.payload.reservations;
+      newState.status = 'succeeded';
+      return newState;
+    },
+    [fetchReservations.rejected]: (state, action) => {
+      const newState = { ...current(state) };
+      newState.status = 'failed';
+      newState.error = action.error.message;
+      return newState;
+    },
     [createReserve.fulfilled]: (state, action) => {
-      console.log(current(state));
-      console.log(action.payload);
-      let { reservations } = current(state);
+      const { reservations } = current(state);
       const { reservation } = action.payload;
-      reservations = [...reservations, reservation];
-      console.log(reservations);
-      console.log(reservation);
-      console.log(action.payload);
+      return [...reservations, reservation];
     },
   },
 });

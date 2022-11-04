@@ -16,11 +16,9 @@ export const fetchCars = createAsyncThunk(
       };
       const response = await fetch(url, options);
       if (response.status === 401) {
-        console.log('Unauthorized');
         return rejectWithValue('Unauthorized');
       }
       const data = await response.json();
-      console.log(response);
       return data;
     } catch (err) {
       return rejectWithValue(err);

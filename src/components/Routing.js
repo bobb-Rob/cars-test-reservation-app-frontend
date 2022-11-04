@@ -9,7 +9,7 @@ import Cars from './cars/Cars';
 import CarsDetails from './cars/CarsDetails';
 import Addcars from './cars/addcars';
 import AddReserveForm from './Reservation/AddReserveForm';
-import Reservations from './reservation/Reservation';
+import Reservations from './Reservation/Reservation';
 
 const Routing = () => (
   <Routes>
