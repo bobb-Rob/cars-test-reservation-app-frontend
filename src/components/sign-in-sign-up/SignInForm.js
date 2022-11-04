@@ -71,15 +71,16 @@ const SignInForm = () => {
           </div>
           <button className="btn btn-success" type="submit">Login</button>
         </form>
+        <div className="D">
+          <span className="greens ">
+            Don&apos;t have an account?
+            <Link to="/signup" className="">
+              Sign up
+            </Link>
+          </span>
+        </div>
       </div>
-      <div>
-        <span className="greens">
-          Don&apos;t have an account?
-          <Link to="/signup" className="">
-            Sign up
-          </Link>
-        </span>
-      </div>
+
     </div>
   );
 };
