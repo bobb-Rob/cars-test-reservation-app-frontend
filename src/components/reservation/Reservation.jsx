@@ -12,6 +12,11 @@ function Reservations() {
         <div className="col-md-12">
           <h1 className="text-center">Reservations</h1>
           <div className="row">
+            {reservations.length <= 0 && (
+              <div className="loading">
+                <h4 className="text-center">No reservations</h4>
+              </div>
+            )}
             {reservations.map((reservation) => (
               <div className="col-md-4" key={reservation.id}>
                 <div className="card mb-4">

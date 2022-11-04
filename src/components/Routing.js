@@ -7,6 +7,7 @@ import SignUpSuccesPage from './sign-in-sign-up/SignUpSuccesPage';
 import CarsPage from './cars/CarsPage';
 import Cars from './cars/Cars';
 import CarsDetails from './cars/CarsDetails';
+import Unauthorized from './sign-in-sign-up/Unauthorized';
 import Addcars from './cars/addcars';
 import Delete from './cars/delete';
 import AddReserveForm from './Reservation/AddReserveForm';
@@ -16,6 +17,7 @@ const Routing = () => (
   <Routes>
     <Route path="/" element={<Splash />} />
     <Route path="/login" element={<SignInForm />} />
+    <Route path="/login/redirect" element={<Unauthorized />} />
     <Route path="/signup" element={<SignUpForm />} />
     <Route path="/signup/success" element={<SignUpSuccesPage />} />
     <Route path="/cars" element={<CarsPage />}>

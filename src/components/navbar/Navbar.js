@@ -12,6 +12,7 @@ import { HiMenu } from 'react-icons/hi';
 import '../../styles/navbar.css';
 import logo from '../../images/cars-bnb-logo.png';
 import { addFromNav } from '../../redux/Reservations/ReserveSlice';
+import { logout } from '../../redux/Auth/authenticationSlice';
 
 function Navbar() {
   const dispatch = useDispatch();
@@ -19,6 +20,15 @@ function Navbar() {
 
   return (
     <header className="my-navbar">
+      <div className="logout">
+        <button
+          type="button"
+          className="logout-btn"
+          onClick={() => dispatch(logout())}
+        >
+          Logout
+        </button>
+      </div>
       <div className="logo">
         <img src={logo} alt="carsBnb Logo" />
       </div>
