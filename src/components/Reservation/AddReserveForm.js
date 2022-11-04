@@ -16,7 +16,9 @@ const AddReserveForm = () => {
   const { user } = cars;
   const params = useParams();
   const currentCar = cars.cars.find((car) => car.id === Number(params.carId)) || {};
-  const { register, handleSubmit, formState: { errors }, reset } = useForm({
+  const {
+    register, handleSubmit, formState: { errors }, reset,
+  } = useForm({
     defaultValues: {
       city: '',
       reservation_date: '',
@@ -30,7 +32,7 @@ const AddReserveForm = () => {
     const reservation = { ...data, user_id: user.id };
     console.log(reservation);
     dispatch(createReserve(reservation)).then((response) => {
-      if (response.type === 'reservations/createReserve/fulfilled') {
+      if (response.type === 'reserve/createReserve/fulfilled') {
         if (response.ok) {
           reset();
           navigate('/reservation-list');
@@ -47,12 +49,13 @@ const AddReserveForm = () => {
     return () => {
       console.log('unmounted');
       dispatch(addFromNav(false));
+      dispatch(isError(false));
     };
   }, [reservations.addFromNav]);
 
   return (
     <div className="container w-75 w-sm-50 mt-5 reserve-form-wrap">
-      { reservations.error || errorMessages.length > 0 && (
+      { (reservations.error || (errorMessages.length > 0)) && (
         <div className="alert alert-danger" role="alert">
           {errorMessages.map((error) => (
             <p key={error}>{error}</p>

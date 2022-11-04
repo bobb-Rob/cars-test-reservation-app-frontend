@@ -44,13 +44,8 @@ const carSlice = createSlice({
     },
     [fetchCars.fulfilled]: (state, action) => {
       const newState = { ...current(state) };
-      const {
-        admin, email, id, name,
-      } = action.payload.user;
       newState.cars = action.payload.cars;
-      newState.user = {
-        admin, email, id, name,
-      };
+      newState.user = action.payload.user || {};
       newState.status = 'succeeded';
       return newState;
     },

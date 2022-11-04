@@ -40,7 +40,7 @@ const reserveSlice = createSlice({
       const newState = { ...current(state) };
       newState.error = action.payload;
       return newState;
-    }
+    },
   },
   extraReducers: {
     [createReserve.fulfilled]: (state, action) => {
