@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk, current } from '@reduxjs/toolkit';
+import addcars, { deleteCars } from './addcarSlice';
 // eslint-disable no-unused-vars
 
 export const fetchCars = createAsyncThunk(
@@ -53,6 +54,18 @@ const carSlice = createSlice({
       const newState = { ...current(state) };
       newState.status = 'failed';
       newState.error = action.payload;
+      return newState;
+    },
+    [addcars.fulfilled]: (state, action) => {
+      const newState = { ...current(state) };
+      newState.cars.push(action.payload.car);
+      return newState;
+    },
+    [deleteCars.fulfilled]: (state, action) => {
+      const newState = { ...current(state) };
+      newState.cars = newState.cars.filter(
+        (car) => car.id !== action.payload.car.id,
+      );
       return newState;
     },
   },

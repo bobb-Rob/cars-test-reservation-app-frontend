@@ -15,24 +15,17 @@
   height: 100vh;
 }
 
-/* input {
-  caret-color: red;
-}
-
+/*
 body {
-  margin: 0;
   width: 100vw;
   height: 100vh;
   background: linear-gradient(45deg, #fff 0%, #b6ffb3 50%, #97bf11 100%);
-  display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  place-items: center;
-  overflow: hidden;
   font-family: poppins, sans-serif;
-}
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
 
+/*
 .big {
   width: 164%;
   margin-left: -29%;

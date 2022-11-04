@@ -2,7 +2,11 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { NavLink, Link, useParams } from 'react-router-dom';
 import {
-  FaFacebookF, FaTwitter, FaPinterest, FaVimeoV, FaGooglePlusG,
+  FaFacebookF,
+  FaTwitter,
+  FaPinterest,
+  FaVimeoV,
+  FaGooglePlusG,
 } from 'react-icons/fa';
 import { HiMenu } from 'react-icons/hi';
 import '../../styles/navbar.css';
@@ -21,7 +25,9 @@ function Navbar() {
       <nav className="menu">
         <div className="mobile-nav desktop-nav">
           <div className="my-nav-links">
-            <NavLink to="/cars" className="active">CARS</NavLink>
+            <NavLink to="/cars" className="active">
+              CARS
+            </NavLink>
             <NavLink to="/addcar">ADD CAR</NavLink>
             <NavLink
               to={`/cars/${carId}/reservations/add`}
@@ -32,6 +38,7 @@ function Navbar() {
               RESERVE
             </NavLink>
             <NavLink to="/reservations">MY RESERVATIONS</NavLink>
+            <NavLink to="/delete">DELETE CAR</NavLink>
           </div>
           <div className="nav-footer">
             <div className="nav-icons">

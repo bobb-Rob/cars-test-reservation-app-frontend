@@ -16,7 +16,7 @@ const Splash = () => (
         <Link to="/login" className="text-decoration-none">
           <button
             type="button"
-            className="mb-5 sign-btn"
+            className="sign-btn"
           >
             Sign In
           </button>
@@ -24,7 +24,7 @@ const Splash = () => (
         <Link to="/signup" className="text-decoration-none">
           <button
             type="button"
-            className="mb-3 sign-btn"
+            className=" sign-btn"
           >
             Create Account
           </button>
