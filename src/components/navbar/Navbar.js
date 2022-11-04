@@ -1,5 +1,6 @@
 import React from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { NavLink, Link, useParams } from 'react-router-dom';
 import {
   FaFacebookF,
   FaTwitter,
@@ -10,8 +11,12 @@ import {
 import { HiMenu } from 'react-icons/hi';
 import '../../styles/navbar.css';
 import logo from '../../images/cars-bnb-logo.png';
+import { addFromNav } from '../../redux/Reservations/ReserveSlice';
 
 function Navbar() {
+  const dispatch = useDispatch();
+  const carId = useParams().carId || 'choose';
+
   return (
     <header className="my-navbar">
       <div className="logo">
@@ -24,8 +29,15 @@ function Navbar() {
               CARS
             </NavLink>
             <NavLink to="/addcar">ADD CAR</NavLink>
-            <NavLink to="/reserve">RESERVE</NavLink>
-            <NavLink to="/reservation-list">MY RESERVATIONS</NavLink>
+            <NavLink
+              to={`/cars/${carId}/reservations/add`}
+              onClick={() => {
+                dispatch(addFromNav(true));
+              }}
+            >
+              RESERVE
+            </NavLink>
+            <NavLink to="/reservations">MY RESERVATIONS</NavLink>
             <NavLink to="/delete">DELETE CAR</NavLink>
           </div>
           <div className="nav-footer">

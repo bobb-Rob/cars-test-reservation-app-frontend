@@ -16,8 +16,6 @@
   margin: auto;
 }
 
-
-
 .container {
   position: relative;
   height: 560px;
@@ -27,7 +25,6 @@
   background: #ecf0f3;
   box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
 }
-
 
 .brand-logo {
   height: 100px;
@@ -130,5 +127,4 @@
   outline: none;
   width: 100%;
   height: 70px;
-
 }

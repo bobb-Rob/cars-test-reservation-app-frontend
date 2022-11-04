@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 /* eslint-disable react/jsx-props-no-spreading */
+/* eslint-disable react/no-array-index-key */
+/* eslint-disable */
 import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
@@ -9,6 +11,8 @@ import BackArrow from '../utils/BackArrow';
 const SignUpForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [isError, setIsError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
   const {
     register,
     handleSubmit,
@@ -24,20 +28,30 @@ const SignUpForm = () => {
 
   const onSubmit = (user, e) => {
     e.preventDefault();
+    setIsError(false);
+    setErrorMessage([]);
     dispatch(signUpUser(user)).then((response) => {
       console.log(response);
       const { code } = response.payload.status;
       if (code === 200) {
         reset();
         navigate('/signup/success');
+      } else {
+        setIsError(true);
+        setErrorMessage(response.payload.status.error);
       }
     });
   };
 
+  const disPlayError = () => errorMessage.map((error, index) => (<p key={index + 2}>{error}</p>));
+
   return (
     <div className="sign-in-container">
       <BackArrow />
-      <div className="sign-in-form-wrap">
+      <div className="sign-in-form-wrap">        
+        <div>
+          { isError && disPlayError() }
+        </div>
         <h2 className="title2">Create Account</h2>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="form-group">

@@ -9,6 +9,8 @@ import Cars from './cars/Cars';
 import CarsDetails from './cars/CarsDetails';
 import Addcars from './cars/addcars';
 import Delete from './cars/delete';
+import AddReserveForm from './Reservation/AddReserveForm';
+import Reservations from './reservation/Reservation';
 
 const Routing = () => (
   <Routes>
@@ -20,8 +22,11 @@ const Routing = () => (
       <Route path="" element={<Cars />} />
       <Route path=":carId" element={<CarsDetails />} />
     </Route>
+    <Route path="/cars/:carId/reservations/add" element={<AddReserveForm />} />
+    <Route path="/cars/choose/reservations/add" element={<AddReserveForm />} />
     <Route path="/addcar" element={<Addcars />} />
     <Route path="/delete" element={<Delete />} />
+    <Route path="/reservations" element={<Reservations />} />
     <Route path="*" element={<h1>404: Not Found</h1>} />
   </Routes>
 );
