@@ -98,15 +98,16 @@ const SignUpForm = () => {
             Sign up
           </button>
         </form>
+        <div className="D">
+          <span className="greens">
+            Already have an account?
+            <Link to="/login" className="">
+              Sign in
+            </Link>
+          </span>
+        </div>
       </div>
-      <div>
-        <span>
-          Already have an account?
-          <Link to="/login" className="">
-            Sign in
-          </Link>
-        </span>
-      </div>
+
     </div>
   );
 };
