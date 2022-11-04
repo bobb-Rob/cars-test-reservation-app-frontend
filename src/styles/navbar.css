@@ -29,9 +29,9 @@
   display: flex;
 }
 
-.logout {  
+.logout {
   position: absolute;
-  top: 20px; 
+  top: 20px;
 }
 
 .logout-btn {
@@ -44,7 +44,7 @@
   border-radius: 10px;
   color: white;
   font-weight: 600;
-  font-size: 0.7rem; 
+  font-size: 0.7rem;
 }
 
 @media screen and (min-width: 768px) {

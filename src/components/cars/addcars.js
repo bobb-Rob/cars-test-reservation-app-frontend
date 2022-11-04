@@ -25,7 +25,6 @@ function Addcars() {
   const onSubmit = (car, e) => {
     e.preventDefault();
     dispatch(addcars(car)).then((response) => {
-      console.log(response);
       const { code } = response.payload;
       if (code === 200) {
         reset();

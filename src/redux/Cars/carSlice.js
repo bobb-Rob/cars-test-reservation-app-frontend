@@ -56,7 +56,6 @@ const carSlice = createSlice({
     },
     [addcars.fulfilled]: (state, action) => {
       const newState = { ...current(state) };
-      console.log(action.payload);
       newState.cars = [...newState.cars, action.payload.car];
       newState.status = action.payload.notice;
       return newState;

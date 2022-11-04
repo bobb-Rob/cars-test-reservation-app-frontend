@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import store from './redux/store';
 import { fetchCars } from './redux/Cars/carSlice';
 import { fetchReservations } from './redux/Reservations/ReserveSlice';
+import { getUser } from './redux/Auth/authenticationSlice';
 
 import App from './App';
 // Bootstrap CSS
@@ -18,6 +19,7 @@ const root = createRoot(container);
 
 store.dispatch(fetchCars());
 store.dispatch(fetchReservations());
+store.dispatch(getUser());
 
 root.render(
   <BrowserRouter>

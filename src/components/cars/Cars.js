@@ -10,15 +10,17 @@ const Cars = () => {
   const navigate = useNavigate();
   const state = useSelector((state) => state);
   const { cars } = state.cars;
-  const { user } = state.user;
-  const threeCars = cars.slice(0, 3);
-  console.log(threeCars);
+  const { user } = state;
+  // const threeCars = cars.slice(0, 3);
 
   useEffect(() => {
     if (user.status === 'not-logged-in') {
-      navigate('/');
+      navigate('/login');
     }
-  }, [cars.error]);
+    if (user.error === 'Unauthorized') {
+      navigate('/login');
+    }
+  }, [user.status, user.error, navigate]);
 
   return (
     <div className="main-car-container">

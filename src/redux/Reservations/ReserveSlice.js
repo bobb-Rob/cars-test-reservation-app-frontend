@@ -82,9 +82,16 @@ const reserveSlice = createSlice({
       return newState;
     },
     [createReserve.fulfilled]: (state, action) => {
-      const { reservations } = current(state);
-      const { reservation } = action.payload;
-      return [...reservations, reservation];
+      const newState = { ...current(state) };
+      newState.reservations = [...newState.reservations, action.payload.reservation];
+      newState.status = action.payload.message;
+      return newState;
+    },
+    [createReserve.rejected]: (state, action) => {
+      const newState = { ...current(state) };
+      newState.status = 'failed';
+      newState.error = action.payload.error;
+      return newState;
     },
   },
 });

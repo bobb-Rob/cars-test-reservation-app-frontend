@@ -31,7 +31,6 @@ const SignUpForm = () => {
     setIsError(false);
     setErrorMessage([]);
     dispatch(signUpUser(user)).then((response) => {
-      console.log(response);
       const { code } = response.payload.status;
       if (code === 200) {
         reset();
