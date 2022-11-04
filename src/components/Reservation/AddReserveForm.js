@@ -13,7 +13,7 @@ const AddReserveForm = () => {
   const [errorMessages, setErrorMessages] = React.useState([]);
 
   const { cars, reservations } = state;
-  const { user } = cars;
+  const { user } = state.user;
   const params = useParams();
   const currentCar = cars.cars.find((car) => car.id === Number(params.carId)) || {};
   const {
@@ -32,9 +32,9 @@ const AddReserveForm = () => {
     const reservation = { ...data, user_id: user.id };
     dispatch(createReserve(reservation)).then((response) => {
       if (response.type === 'reserve/createReserve/fulfilled') {
-        if (response.ok) {
+        if (response.payload.code === 200) {
           reset();
-          navigate('/reservation-list');
+          navigate('/cars/reservations');
         } else {
           dispatch(isError(true));
           setErrorMessages(response.payload.error);
@@ -46,7 +46,7 @@ const AddReserveForm = () => {
   useEffect(() => () => {
     dispatch(addFromNav(false));
     dispatch(isError(false));
-  }, [reservations.addFromNav], dispatch);
+  }, [reservations.addFromNav, dispatch]);
 
   return (
     <div className="container w-75 w-sm-50 mt-5 reserve-form-wrap">

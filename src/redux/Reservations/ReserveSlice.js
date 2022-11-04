@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice, current } from '@reduxjs/toolkit';
 
 export const fetchReservations = createAsyncThunk(
   'reservations/fetchReservations',
-  async () => {
+  async (_, { rejectWithValue }) => {
     const token = localStorage.getItem('loginToken');
     const url = 'http://localhost:3001/reservations';
     const options = {
@@ -13,6 +13,9 @@ export const fetchReservations = createAsyncThunk(
       },
     };
     const response = await fetch(url, options);
+    if (response.status === 401) {
+      return rejectWithValue('Unauthorized');
+    }
     const data = await response.json();
     return data;
   },
@@ -75,13 +78,20 @@ const reserveSlice = createSlice({
     [fetchReservations.rejected]: (state, action) => {
       const newState = { ...current(state) };
       newState.status = 'failed';
-      newState.error = action.error.message;
+      newState.error = action.payload;
       return newState;
     },
     [createReserve.fulfilled]: (state, action) => {
-      const { reservations } = current(state);
-      const { reservation } = action.payload;
-      return [...reservations, reservation];
+      const newState = { ...current(state) };
+      newState.reservations = [...newState.reservations, action.payload.reservation];
+      newState.status = action.payload.message;
+      return newState;
+    },
+    [createReserve.rejected]: (state, action) => {
+      const newState = { ...current(state) };
+      newState.status = 'failed';
+      newState.error = action.payload.error;
+      return newState;
     },
   },
 });

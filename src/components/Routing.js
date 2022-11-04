@@ -7,6 +7,7 @@ import SignUpSuccesPage from './sign-in-sign-up/SignUpSuccesPage';
 import CarsPage from './cars/CarsPage';
 import Cars from './cars/Cars';
 import CarsDetails from './cars/CarsDetails';
+import Unauthorized from './sign-in-sign-up/Unauthorized';
 import Addcars from './cars/addcars';
 import Delete from './cars/delete';
 import AddReserveForm from './Reservation/AddReserveForm';
@@ -16,17 +17,18 @@ const Routing = () => (
   <Routes>
     <Route path="/" element={<Splash />} />
     <Route path="/login" element={<SignInForm />} />
+    <Route path="/login/redirect" element={<Unauthorized />} />
     <Route path="/signup" element={<SignUpForm />} />
     <Route path="/signup/success" element={<SignUpSuccesPage />} />
     <Route path="/cars" element={<CarsPage />}>
       <Route path="" element={<Cars />} />
       <Route path=":carId" element={<CarsDetails />} />
+      <Route path="addcar" element={<Addcars />} />
+      <Route path=":carId/reservations/add" element={<AddReserveForm />} />
+      <Route path="choose/reservations/add" element={<AddReserveForm />} />
+      <Route path="reservations" element={<Reservations />} />
+      <Route path="delete" element={<Delete />} />
     </Route>
-    <Route path="/cars/:carId/reservations/add" element={<AddReserveForm />} />
-    <Route path="/cars/choose/reservations/add" element={<AddReserveForm />} />
-    <Route path="/addcar" element={<Addcars />} />
-    <Route path="/delete" element={<Delete />} />
-    <Route path="/reservations" element={<Reservations />} />
     <Route path="*" element={<h1>404: Not Found</h1>} />
   </Routes>
 );

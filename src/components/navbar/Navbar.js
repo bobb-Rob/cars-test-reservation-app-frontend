@@ -12,6 +12,7 @@ import { HiMenu } from 'react-icons/hi';
 import '../../styles/navbar.css';
 import logo from '../../images/cars-bnb-logo.png';
 import { addFromNav } from '../../redux/Reservations/ReserveSlice';
+import { logout } from '../../redux/Auth/authenticationSlice';
 
 function Navbar() {
   const dispatch = useDispatch();
@@ -19,16 +20,25 @@ function Navbar() {
 
   return (
     <header className="my-navbar">
+      <div className="logout">
+        <button
+          type="button"
+          className="logout-btn"
+          onClick={() => dispatch(logout())}
+        >
+          Logout
+        </button>
+      </div>
       <div className="logo">
         <img src={logo} alt="carsBnb Logo" />
       </div>
       <nav className="menu">
         <div className="mobile-nav desktop-nav">
           <div className="my-nav-links">
-            <NavLink to="/cars" className="active">
+            <NavLink to="/cars">
               CARS
             </NavLink>
-            <NavLink to="/addcar">ADD CAR</NavLink>
+            <NavLink to="addcar">ADD CAR</NavLink>
             <NavLink
               to={`/cars/${carId}/reservations/add`}
               onClick={() => {
@@ -37,8 +47,8 @@ function Navbar() {
             >
               RESERVE
             </NavLink>
-            <NavLink to="/reservations">MY RESERVATIONS</NavLink>
-            <NavLink to="/delete">DELETE CAR</NavLink>
+            <NavLink to="reservations">MY RESERVATIONS</NavLink>
+            <NavLink to="delete">DELETE CAR</NavLink>
           </div>
           <div className="nav-footer">
             <div className="nav-icons">
