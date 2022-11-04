@@ -25,10 +25,10 @@ function Navbar() {
       <nav className="menu">
         <div className="mobile-nav desktop-nav">
           <div className="my-nav-links">
-            <NavLink to="/cars" className="active">
+            <NavLink to="/cars">
               CARS
             </NavLink>
-            <NavLink to="/addcar">ADD CAR</NavLink>
+            <NavLink to="addcar">ADD CAR</NavLink>
             <NavLink
               to={`/cars/${carId}/reservations/add`}
               onClick={() => {
@@ -37,8 +37,8 @@ function Navbar() {
             >
               RESERVE
             </NavLink>
-            <NavLink to="/reservations">MY RESERVATIONS</NavLink>
-            <NavLink to="/delete">DELETE CAR</NavLink>
+            <NavLink to="reservations">MY RESERVATIONS</NavLink>
+            <NavLink to="delete">DELETE CAR</NavLink>
           </div>
           <div className="nav-footer">
             <div className="nav-icons">

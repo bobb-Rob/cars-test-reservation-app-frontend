@@ -9,7 +9,6 @@ import CarCard from './CarCard';
 
 const Carousel = () => {
   const carState = useSelector((state) => state.cars);
-  console.log(carState.cars);
   return (
     <Slider
       infinite

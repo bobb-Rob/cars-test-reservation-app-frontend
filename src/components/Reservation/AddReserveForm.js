@@ -32,7 +32,7 @@ const AddReserveForm = () => {
     const reservation = { ...data, user_id: user.id };
     dispatch(createReserve(reservation)).then((response) => {
       if (response.type === 'reserve/createReserve/fulfilled') {
-        if (response.ok) {
+        if (response.payload.code === 200) {
           reset();
           navigate('/reservation-list');
         } else {
