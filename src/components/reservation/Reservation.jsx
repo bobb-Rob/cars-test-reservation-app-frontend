@@ -18,8 +18,7 @@ function Reservations() {
                   <div className="card-body">
                     <img
                       src={
-                        cars.find((car) => car.id === reservation.car_id)
-                          .featured_image
+                        cars.find((car) => car.id === reservation.car_id).featured_image
                       }
                       alt="car"
                       className="img-fluid"
