@@ -15,4 +15,3 @@ export default configureStore({
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
 });
-

@@ -1,8 +1,6 @@
-// eslint-disable
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-// import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import CarCard from './CarCard';
@@ -18,13 +16,6 @@ const Cars = () => {
       <h1>Latest Models</h1>
       <p>Please select a car model</p>
       <div className="car-container">
-        {/* <Slider
-          infinite
-          speed={500}
-          slidesToShow={3}
-          slidesToScroll={3}
-          autoplay
-        > */}
         { carState.cars.map((car) => (
           <div key={car.id}>
             <Link to={`/cars/${car.id}`} className="car-link">
@@ -37,7 +28,6 @@ const Cars = () => {
             </Link>
           </div>
         ))}
-        {/* </Slider> */}
       </div>
     </div>
   );

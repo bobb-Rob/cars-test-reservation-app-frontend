@@ -12,7 +12,7 @@ const AddReserveForm = () => {
   const dispatch = useDispatch();
   const [errorMessages, setErrorMessages] = React.useState([]);
 
-  const { cars, reservations } = state;
+  const { cars, addReservations } = state;
   const { user } = cars;
   const params = useParams();
   const currentCar = cars.cars.find((car) => car.id === Number(params.carId)) || {};
@@ -30,7 +30,6 @@ const AddReserveForm = () => {
   const onSubmit = (data, e) => {
     e.preventDefault();
     const reservation = { ...data, user_id: user.id };
-    console.log(reservation);
     dispatch(createReserve(reservation)).then((response) => {
       if (response.type === 'reserve/createReserve/fulfilled') {
         if (response.ok) {
@@ -51,11 +50,11 @@ const AddReserveForm = () => {
       dispatch(addFromNav(false));
       dispatch(isError(false));
     };
-  }, [reservations.addFromNav]);
+  }, [addReservations.addFromNav]);
 
   return (
     <div className="container w-75 w-sm-50 mt-5 reserve-form-wrap">
-      { (reservations.error || (errorMessages.length > 0)) && (
+      { (addReservations.error || (errorMessages.length > 0)) && (
         <div className="alert alert-danger" role="alert">
           {errorMessages.map((error) => (
             <p key={error}>{error}</p>
@@ -79,7 +78,7 @@ const AddReserveForm = () => {
           {...register('reservation_date', { required: true })}
         />
         {errors.date && <span>Date is required</span>}
-        { reservations.addFromNav ? (
+        { addReservations.addFromNav ? (
           <select
             name="car_id"
             className="form-select"
