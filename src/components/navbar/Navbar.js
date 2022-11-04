@@ -12,7 +12,7 @@ import { addFromNav } from '../../redux/Reservations/ReserveSlice';
 function Navbar() {
   const dispatch = useDispatch();
   const carId = useParams().carId || 'choose';
-  console.log(carId);
+
   return (
     <header className="my-navbar">
       <div className="logo">
@@ -31,7 +31,7 @@ function Navbar() {
             >
               RESERVE
             </NavLink>
-            <NavLink to="/reservation-list">MY RESERVATIONS</NavLink>
+            <NavLink to="/reservations">MY RESERVATIONS</NavLink>
           </div>
           <div className="nav-footer">
             <div className="nav-icons">
