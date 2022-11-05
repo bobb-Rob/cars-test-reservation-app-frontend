@@ -9,6 +9,12 @@
 ### Splash Page
 
 ![screenshot](./screenshots/screen1.png)
+## Car Listings
+![screenshot](./screenshots/screen2.png)
+## Reservation Page
+![screenshot](./screenshots/screen3.png)
+## Mobile View
+![screenshot](./screenshots/screen4.png)
 
 ## Back-end App(API)
 
@@ -23,6 +29,14 @@
 ## Live link 🙌
 
 [LINK](https://6365ab83111cad2f422103df--stately-tulumba-fce256.netlify.app/)
+
+## Kanban Board 📝
+### Initial Planning
+![screenshot](./screenshots/kanban.png)
+
+## Link to kanban board
+
+[Link to Kanban Board](https://github.com/users/Abdo9826/projects/4/views/1)
 
 ## Getting Started 🙌
 
