@@ -62,7 +62,6 @@ const carSlice = createSlice({
     },
     [deleteCars.fulfilled]: (state, action) => {
       const newState = { ...current(state) };
-      console.log(action.payload);
       newState.cars = newState.cars.filter(
         (car) => car.id !== action.payload.car.id,
       );
