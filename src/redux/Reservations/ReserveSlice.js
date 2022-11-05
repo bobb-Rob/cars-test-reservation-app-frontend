@@ -118,7 +118,9 @@ const reserveSlice = createSlice({
     },
     [deleteReserve.fulfilled]: (state, action) => {
       const newState = { ...current(state) };
-      newState.reservations = newState.reservations.filter((reservation) => reservation.id !== action.payload.id);
+      newState.reservations = newState.reservations.filter(
+        (reservation) => reservation.id !== action.payload.id,
+      );
       newState.status = action.payload.message;
       return newState;
     },
