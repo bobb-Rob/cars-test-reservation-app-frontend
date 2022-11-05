@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test if header render correctly 1`] = `
+<div
+  className="main-car-container"
+>
+  <h1>
+    Latest Models
+  </h1>
+  <p>
+    Please select a car model
+  </p>
+  <div
+    className="car-container"
+  >
+    <div
+      className="loading"
+    >
+      <h4>
+        No Cars to show, Please add new car
+      </h4>
+    </div>
+  </div>
+</div>
+`;
