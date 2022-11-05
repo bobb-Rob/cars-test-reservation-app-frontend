@@ -1,11 +1,10 @@
 # Cars BnB App
-
 ## Welcome! 👋
 > #### Cars BnB App
-> This is aone stop shop for reservation of exotic cars test driving.
+> This is a simple app that allows users to rent cars from other users. A user can create a car listing, and other users can rent the car for a specified period of time. The app is built using Ruby on Rails and Bootstrap.
 
-## Back-end App
-> [Back-end](https://github.com/Abdo9826/cars-bnb-backend)
+## Back-end App(API)
+> [API](https://github.com/Abdo9826/cars-bnb-backend)
                              
 ## Built With ✔️
 
@@ -43,13 +42,15 @@ Clone the repository and change the directory to portfolio
 Install all project dependencies by running the command below
  
 ``` 
- ` $ npm install`
+ ` $ npm install` or ` $ yarn install`
 ```
 ### Usage
 
 Run
 ``` 
-  `$ npm start or deploy the index.html from the build/public folder 
+  `$ npm start or deploy the index.html from the build/public folder`
+  or 
+  `$ yarn start or deploy the index.html from the build/public folder`
 ```
 
 ### Deployment
@@ -69,7 +70,7 @@ Run
 
 | 👤 Name | Github | Twitter | LinkedIn |
 |------|--------|---------|----------|
-|Sigie |[@sigie](https://github.com/sigie)|[@Abdo](https://twitter.com/sigie)|[@sigie](https://www.linkedin.com/in/sigie/)|
+|Sigie |[@ksigei](https://github.com/ksigei)|[@Abdo](https://twitter.com/sigie)|[@sigie](https://www.linkedin.com/in/sigie/)|
 
 | 👤 Name | Github | Twitter | LinkedIn |
 |------|--------|---------|----------|
