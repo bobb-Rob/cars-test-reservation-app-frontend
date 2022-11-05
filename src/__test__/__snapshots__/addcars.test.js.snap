@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test if header render correctly 1`] = `
+<div
+  className="big"
+>
+  <div
+    className="container"
+  >
+    <form
+      onSubmit={[Function]}
+    >
+      <div
+        className="brand-logo"
+      >
+         
+        <img
+          alt="Cars bnb logo"
+          src="cars-bnb-logo.png"
+        />
+         
+      </div>
+      <div
+        className="inputs"
+      >
+        <label
+          className="green"
+        >
+          Model
+        </label>
+        <input
+          className="input2"
+          name="model"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder="Model"
+          type="text"
+        />
+        <label
+          className="green"
+        >
+          Brand
+        </label>
+        <input
+          className="input2"
+          name="brand"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder="Brand"
+          type="text"
+        />
+        <label
+          className="green"
+          htmlFor="date"
+        >
+          date
+        </label>
+        <input
+          className="input2"
+          id="date"
+          max="2022-12-31"
+          min="1990-01-01"
+          name="year_released"
+          onBlur={[Function]}
+          onChange={[Function]}
+          type="date"
+        />
+        <label
+          className="green"
+        >
+          car Photo
+        </label>
+        <input
+          className="input2"
+          name="featured_image"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder="car Photo"
+          type="text"
+        />
+        <label
+          className="green"
+        >
+          specifications
+        </label>
+        <textarea
+          className="input3"
+          name="specifications"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder="specifications"
+          type="text"
+        />
+        <button
+          className=" mr"
+          type="submit"
+        >
+          Add
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
