@@ -1,12 +1,31 @@
 .reserve-btn {
+  text-decoration: none;
   background-color: var(--primary-color);
   border-radius: 20px;
-  width: 150px;
+  width: 180px !important;
   color: #fff;
   font-size: 1rem;
   font-weight: 700;
-  padding: 0.5rem 0;
+  padding: 0.5rem 1rem;
   border: none;
   margin: 1rem 0;
   cursor: pointer;
+}
+
+.reserve-btn:hover {
+  text-decoration: none;
+  background-color: var(--grey-shade-2);
+}
+
+.reservation-back-btn {
+  position: absolute;
+  top: 0;
+  font-size: 1.5rem;
+  background-color: transparent;
+  border: none;
+  color: var(--primary-color);
+}
+
+.reserve-form-wrap {
+  position: relative;
 }
