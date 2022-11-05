@@ -28,7 +28,7 @@
 
 ## Live link 🙌
 
-[LINK](https://6365ab83111cad2f422103df--stately-tulumba-fce256.netlify.app/)
+[LINK](https://63666fbc53628775d8aaf544--stately-tulumba-fce256.netlify.app/)
 
 ## Kanban Board 📝
 ### Initial Planning
