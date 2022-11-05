@@ -16,7 +16,7 @@
 
 ## Live link 🙌
 
-[LINK](https://6365ab83111cad2f422103df--stately-tulumba-fce256.netlify.app/cars/reservations)
+[LINK](https://6365ab83111cad2f422103df--stately-tulumba-fce256.netlify.app/)
 
 
 ## Getting Started 🙌
