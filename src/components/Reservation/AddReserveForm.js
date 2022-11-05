@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams, useNavigate } from 'react-router-dom';
 import { addFromNav, createReserve, isError } from '../../redux/Reservations/ReserveSlice';
+import BackArrow from '../utils/BackArrow';
 import '../../styles/reservation.css';
 
 const AddReserveForm = () => {
@@ -50,6 +51,7 @@ const AddReserveForm = () => {
 
   return (
     <div className="container w-75 w-sm-50 mt-5 reserve-form-wrap">
+      <BackArrow myClassName="reservation-back-btn" />
       { (reservations.error || (errorMessages.length > 0)) && (
         <div className="alert alert-danger" role="alert">
           {errorMessages.map((error) => (

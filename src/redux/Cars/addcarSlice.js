@@ -34,6 +34,7 @@ export const deleteCars = createAsyncThunk(
         },
       });
       const data = await response.json();
+      console.log(response);
       return data;
     } catch (err) {
       return rejectWithValue(err);

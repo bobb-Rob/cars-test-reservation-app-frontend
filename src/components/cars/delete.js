@@ -9,9 +9,6 @@ export default function Delete() {
   const carState = useSelector((state) => state.cars);
 
   // how to get the id of the car to be deleted from the store and pass it to the deleteCars action
-  const handleDelete = (id) => {
-    dispatch(deleteCars(id));
-  };
 
   // const handleDelete = (id) => {
   //   dispatch(deleteCars({ id }));
@@ -22,14 +19,13 @@ export default function Delete() {
       <img src={car.featured_image} className="card-img-top" alt="..." />
       <div className="card-body">
         <h5 className="card-title">{car.model}</h5>
-        <p className="card-text">{car.specifications}</p>
       </div>
       <ul className="list-group list-group-flush">
         <li className="list-group-item">{car.year_released}</li>
       </ul>
       <div className="card-body">
         <button
-          onClick={handleDelete(car.id)}
+          onClick={() => dispatch(deleteCars(car.id))}
           type="button"
           className="btn btn-danger"
         >
