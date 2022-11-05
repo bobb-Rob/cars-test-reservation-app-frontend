@@ -5,6 +5,8 @@
 > #### Cars BnB App
 >
 > This is a simple app that allows users to rent cars from other users. A user can create a car listing, and other users can rent the car for a specified period of time. The app is built using Ruby on Rails and Bootstrap.
+## Screenshots
+//screenshots links
 
 ## Back-end App(API)
 
