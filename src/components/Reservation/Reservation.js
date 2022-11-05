@@ -1,8 +1,9 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { deleteReserve } from '../../redux/Reservations/ReserveSlice';
 
 function Reservations() {
+  const dispatch = useDispatch();
   const reservations = useSelector((state) => state.reservations.reservations);
   const cars = useSelector((state) => state.cars.cars);
 
@@ -42,12 +43,13 @@ function Reservations() {
                     <p className="card-text">{reservation.city}</p>
                     <p className="card-text">{reservation.reservation_date}</p>
 
-                    <Link
-                      to={`/delete_reservation/${reservation.id}`}
+                    <button
+                      type="button"
+                      onClick={() => dispatch(deleteReserve(reservation.id))}
                       className="btn btn-danger"
                     >
                       Remove
-                    </Link>
+                    </button>
                   </div>
                 </div>
               </div>

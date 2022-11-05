@@ -41,6 +41,29 @@ export const createReserve = createAsyncThunk(
   },
 );
 
+export const deleteReserve = createAsyncThunk(
+  'reserve/deleteReserve',
+  async (id, { rejectWithValue }) => {
+    try {
+      const token = localStorage.getItem('loginToken');
+      const response = await fetch(`http://localhost:3001/reservations/${id}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: token,
+        },
+      });
+      if (response.status === 401) {
+        return rejectWithValue('Unauthorized');
+      }
+      const result = await response.json();
+      return result;
+    } catch (err) {
+      return rejectWithValue(err);
+    }
+  },
+);
+
 const initialState = {
   reservations: [],
   status: 'idle',
@@ -88,6 +111,18 @@ const reserveSlice = createSlice({
       return newState;
     },
     [createReserve.rejected]: (state, action) => {
+      const newState = { ...current(state) };
+      newState.status = 'failed';
+      newState.error = action.payload.error;
+      return newState;
+    },
+    [deleteReserve.fulfilled]: (state, action) => {
+      const newState = { ...current(state) };
+      newState.reservations = newState.reservations.filter((reservation) => reservation.id !== action.payload.id);
+      newState.status = action.payload.message;
+      return newState;
+    },
+    [deleteReserve.rejected]: (state, action) => {
       const newState = { ...current(state) };
       newState.status = 'failed';
       newState.error = action.payload.error;

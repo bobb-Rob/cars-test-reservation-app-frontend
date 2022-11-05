@@ -14,9 +14,8 @@
 
 .reserve-btn:hover {
   text-decoration: none;
-  background-color: var(--grey-shade-2);  
+  background-color: var(--grey-shade-2);
 }
-
 
 .reservation-back-btn {
   position: absolute;
